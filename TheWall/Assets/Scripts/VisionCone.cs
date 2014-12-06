@@ -5,12 +5,21 @@ public class VisionCone : MonoBehaviour {
 
 	public Sprite normalSoldier;
 	public Sprite redSoldier;
+
+	public float speed = 1.0f;
 	
 	Vector3 directionToPlayer;
 
 	GameObject player;
 
-	float angleShift = 45;
+	float angleShift;
+
+	public float minAngle = 225;
+	public float maxAngle = 315;
+
+	public float coneSize = 10;
+
+	int direction = 1;
 
 	// Use this for initialization
 	void Start () 
@@ -18,6 +27,8 @@ public class VisionCone : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 
 		directionToPlayer = (player.transform.position - transform.position).normalized;
+
+		angleShift = minAngle;
 	}
 
 	private float CalcAngle(Vector3 newDirection) {
@@ -48,15 +59,19 @@ public class VisionCone : MonoBehaviour {
 		//this will make the enemy track the player
 		//directionToPlayer = (player.transform.position - transform.position).normalized;
 
-		angleShift += 2f;
+		angleShift += direction * speed;
+		print ("angle : " + angleShift);
 
 		if(angleShift >= 360)
 			angleShift = 0;
 
+		if((angleShift < minAngle && direction == -1) || (angleShift >= maxAngle && direction == 1))
+			direction *= -1;
+
 		directionToPlayer = Quaternion.Euler(0, 0, angleShift) * Vector3.right;
 
-		Vector3 drawRayTop = Quaternion.Euler (0, 0, angleShift + 10) * Vector3.right;
-		Vector3 drawRayBot = Quaternion.Euler (0, 0, angleShift - 10) * Vector3.right;
+		Vector3 drawRayTop = Quaternion.Euler (0, 0, angleShift + coneSize) * Vector3.right;
+		Vector3 drawRayBot = Quaternion.Euler (0, 0, angleShift - coneSize) * Vector3.right;
 
 		//exact direction the enemy is looking
 		//Debug.DrawRay (transform.position, directionToPlayer * 10, Color.green);

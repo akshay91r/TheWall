@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\SightMotion.cs" />
      <Compile Include="Assets\Scripts\VisionCone.cs" />
   </ItemGroup>
   <ItemGroup>
