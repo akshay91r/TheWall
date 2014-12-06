@@ -3,14 +3,13 @@ using System.Collections;
 
 public class VisionCone : MonoBehaviour {
 
-	public Sprite normalSoldier;
-	public Sprite redSoldier;
-
 	public float speed = 1.0f;
 	
 	Vector3 directionToPlayer;
+	Vector3 drawRayTop;
+	Vector3 drawRayBot;
 
-	GameObject player;
+	Player player;
 
 	float angleShift;
 
@@ -19,16 +18,23 @@ public class VisionCone : MonoBehaviour {
 
 	public float coneSize = 10;
 
+	public float waitTime = 1.0f;
+
+	private Blackboard bb;
+
 	int direction = 1;
 
 	// Use this for initialization
 	void Start () 
 	{
-		player = GameObject.FindGameObjectWithTag ("Player");
+		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player>();
+		bb = GameObject.FindGameObjectWithTag ("Blackboard").GetComponent<Blackboard> ();
 
 		directionToPlayer = (player.transform.position - transform.position).normalized;
 
 		angleShift = minAngle;
+
+		MoveCone ();
 	}
 
 	private float CalcAngle(Vector3 newDirection) {
@@ -50,39 +56,63 @@ public class VisionCone : MonoBehaviour {
 		
 		return sign * angle;
 	}
-	
-	// Update is called once per frame
+
+	private void MoveCone(){
+		StartCoroutine(Move (direction));
+	}
+
+	private IEnumerator Wait(){
+		yield return new WaitForSeconds (waitTime);
+
+		StartCoroutine (Move (direction));
+	}
+
+	private IEnumerator Move(int pDirection){
+//
+	//		//this will make the enemy track the player
+	//directionToPlayer = (player.transform.position - transform.position).normalized;
+
+		while(pDirection == direction)
+		{
+			angleShift += direction * speed;
+			//print ("angle : " + angleShift);
+			
+			if(angleShift >= 360)
+				angleShift = 0;
+			
+			if((angleShift < minAngle && direction == -1) || (angleShift >= maxAngle && direction == 1))
+				direction *= -1;
+			
+			directionToPlayer = Quaternion.Euler(0, 0, angleShift) * Vector3.right;
+			
+			drawRayTop = Quaternion.Euler (0, 0, angleShift + coneSize) * Vector3.right;
+			drawRayBot = Quaternion.Euler (0, 0, angleShift - coneSize) * Vector3.right;
+			
+			//exact direction the enemy is looking
+			//Debug.DrawRay (transform.position, directionToPlayer * 10, Color.green);
+
+
+			yield return null;
+		}
+
+		yield return new WaitForSeconds(1f);
+		
+		StartCoroutine (Wait ());
+	}
+
 	void Update () {
-
-		Quaternion shiftAngle = Quaternion.Euler(0, angleShift, 0);
-
-		//this will make the enemy track the player
-		//directionToPlayer = (player.transform.position - transform.position).normalized;
-
-		angleShift += direction * speed;
-		print ("angle : " + angleShift);
-
-		if(angleShift >= 360)
-			angleShift = 0;
-
-		if((angleShift < minAngle && direction == -1) || (angleShift >= maxAngle && direction == 1))
-			direction *= -1;
-
-		directionToPlayer = Quaternion.Euler(0, 0, angleShift) * Vector3.right;
-
-		Vector3 drawRayTop = Quaternion.Euler (0, 0, angleShift + coneSize) * Vector3.right;
-		Vector3 drawRayBot = Quaternion.Euler (0, 0, angleShift - coneSize) * Vector3.right;
-
-		//exact direction the enemy is looking
-		//Debug.DrawRay (transform.position, directionToPlayer * 10, Color.green);
+		
 		Debug.DrawRay (transform.position, drawRayTop * 10, Color.green);
 		Debug.DrawRay (transform.position, drawRayBot * 10, Color.green);
-
+		
 		if(Mathf.Abs(CalcAngle(player.transform.position - transform.position)) < 20) {
-			GetComponent<SpriteRenderer>().sprite = redSoldier;
+			bb.GameOver();
 		}
-		else
-			GetComponent<SpriteRenderer>().sprite = normalSoldier;
-
+//		else
+//			player.alive = true;
 	}
 }
+//
+
+	
+	

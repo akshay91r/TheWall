@@ -46,6 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Blackboard.cs" />
+     <Compile Include="Assets\Scripts\ClickNode.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\RetryButton.cs" />
      <Compile Include="Assets\Scripts\SightMotion.cs" />
      <Compile Include="Assets\Scripts\VisionCone.cs" />
  <Reference Include="Assembly-UnityScript-firstpass">
