@@ -1,12 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Blackboard.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\VisionCone.cs">
     <Files>
-      <File FileName="Assets\Scripts\SightMotion.cs" Line="4" Column="43" />
-      <File FileName="Assets\Scripts\VisionCone.cs" Line="98" Column="39" />
-      <File FileName="Assets\Scripts\ClickNode.cs" Line="11" Column="80" />
-      <File FileName="Assets\Scripts\Player.cs" Line="38" Column="3" />
-      <File FileName="Assets\Scripts\Blackboard.cs" Line="33" Column="40" />
+      <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\VisionCone.cs" Line="83" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
