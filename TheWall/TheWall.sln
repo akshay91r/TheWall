@@ -5,6 +5,8 @@ Project("{09E070CC-CD18-5D16-9EE6-4918917F69CA}") = "TheWall", "Assembly-CSharp-
 EndProject
 Project("{09E070CC-CD18-5D16-9EE6-4918917F69CA}") = "TheWall", "Assembly-CSharp.csproj", "{6CC4B5A3-7DEC-EE80-23C6-522DC03CF661}"
 EndProject
+Project("{09E070CC-CD18-5D16-9EE6-4918917F69CA}") = "TheWall", "Assembly-CSharp-Editor.csproj", "{74E95359-951E-40F2-75E2-DEEE13138647}"
+EndProject
 Project("{09E070CC-CD18-5D16-9EE6-4918917F69CA}") = "TheWall", "Assembly-UnityScript-firstpass.unityproj", "{B9BDADFB-FA93-E561-2735-3F7C310CB27D}"
 EndProject
 Global
@@ -21,6 +23,10 @@ Global
 		{6CC4B5A3-7DEC-EE80-23C6-522DC03CF661}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CC4B5A3-7DEC-EE80-23C6-522DC03CF661}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CC4B5A3-7DEC-EE80-23C6-522DC03CF661}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74E95359-951E-40F2-75E2-DEEE13138647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74E95359-951E-40F2-75E2-DEEE13138647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74E95359-951E-40F2-75E2-DEEE13138647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74E95359-951E-40F2-75E2-DEEE13138647}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B9BDADFB-FA93-E561-2735-3F7C310CB27D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B9BDADFB-FA93-E561-2735-3F7C310CB27D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9BDADFB-FA93-E561-2735-3F7C310CB27D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,7 +35,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																GlobalSection(MonoDevelopProperties) = preSolution
+																										GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
