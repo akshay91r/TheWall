@@ -24,14 +24,14 @@ public class Blackboard : MonoBehaviour {
 		stateText.text = "You Lose";
 		retry.Activate();
 		foreach(GameObject g in soldiers)
-			g.GetComponent<VisionCone>().StopAllCoroutines();
+			g.GetComponent<CreateVisionCone>().StopAllCoroutines();
 
 	}
 
 	public void WinGame()
 	{
 		foreach(GameObject g in soldiers)
-			g.GetComponent<VisionCone>().StopAllCoroutines();
+			g.GetComponent<CreateVisionCone>().StopAllCoroutines();
 
 		stateText.text = "You Win!";
 		retry.Activate();

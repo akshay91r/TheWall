@@ -58,11 +58,4 @@ public class Player : MonoBehaviour {
 		GetComponent<SpriteRenderer> ().sprite = redHuman;
 		StopAllCoroutines ();
 	}
-
-	//
-	// Update is called once per frame
-	void Update () {
-
-	//
-	}
 }

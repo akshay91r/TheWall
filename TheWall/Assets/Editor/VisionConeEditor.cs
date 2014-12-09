@@ -8,9 +8,8 @@ public class VisionConeEditor : Editor {
 	public override void OnInspectorGUI() {
 
 		//all other public variables
-		VisionCone myTarget = (VisionCone)target;
+		CreateVisionCone myTarget = (CreateVisionCone)target;
 
-		//myTarget.coneTexPath = EditorGUILayout.TextField("Cone Texture", myTarget.coneTexPath);
 		myTarget.speed = EditorGUILayout.FloatField("Speed", myTarget.speed);
 		myTarget.coneSize = EditorGUILayout.FloatField("Cone Size", myTarget.coneSize);
 		myTarget.length = EditorGUILayout.FloatField("Length", myTarget.length);
