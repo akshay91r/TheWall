@@ -96,6 +96,7 @@ public class Blackboard : MonoBehaviour {
 	{
 		stateText.text = "Path "+pathNo+" completed!";
 		pathsDone++;
+		print ("paths done : " + pathsDone);
 		if(pathsDone == totalPaths)
 			WinGame();
 		else
@@ -108,7 +109,7 @@ public class Blackboard : MonoBehaviour {
 		stateText.text = "";
 	}
 
-	public void WinGame()
+	private void WinGame()
 	{
 		foreach(GameObject g in soldiers)
 			g.GetComponent<CreateVisionCone>().StopAllCoroutines();
