@@ -32,11 +32,16 @@ public class VisionCone : MonoBehaviour {
 
 	private float currentAngle; 
 
+	private GameObject pivot;
+	private GameObject visionCone;
+	private Vector3 rotatePoint;
+
 	// Use this for initialization
 	void Start () 
 	{
 		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player>();
 		bb = GameObject.FindGameObjectWithTag ("Blackboard").GetComponent<Blackboard> ();
+		pivot = transform.Find ("Pivot").gameObject;
 
 		directionToPlayer = (player.transform.position - transform.position).normalized;
 
@@ -52,23 +57,16 @@ public class VisionCone : MonoBehaviour {
 
 	private IEnumerator StartConeMotion(){
 
-		print ("start motion called");
-
 		drawRayTop = Quaternion.Euler (0, 0, angleShift + coneSize) * Vector3.right;
 		drawRayBot = Quaternion.Euler (0, 0, angleShift - coneSize) * Vector3.right;
 
 		yield return new WaitForSeconds (initialDelay);
+
 		StartCoroutine(Move());
 	}
 
 	private IEnumerator Wait(){
 
-		print ("wait called");
-
-//		angleShift += direction * speed;
-//		drawRayTop = Quaternion.Euler (0, 0, angleShift + coneSize) * Vector3.right;
-//		drawRayBot = Quaternion.Euler (0, 0, angleShift - coneSize) * Vector3.right;
-//
 		yield return new WaitForSeconds (waitTime);
 
 		StartCoroutine (Move());
@@ -83,22 +81,20 @@ public class VisionCone : MonoBehaviour {
 			return;
 		}
 
-		print ("Current index checking : " + currentIndex);
+		//print ("Current index checking : " + currentIndex);
 		string[] splitString = angleValues[currentIndex].Split("-"[0]);
 		
 		newAngle = int.Parse (splitString[0]);
 		newDirection = char.Parse (splitString[1]);
 
-		print ("New angle : " + newAngle);
-		print ("New direction : " + newDirection);
+		//print ("New angle : " + newAngle);
+		//print ("New direction : " + newDirection);
 	}
 
 	private IEnumerator Move(){
 	
 	//this will make the enemy track the player
 	//directionToPlayer = (player.transform.position - transform.position).normalized;
-
-		print ("move called");
 
 		int pDirection;
 
@@ -110,10 +106,7 @@ public class VisionCone : MonoBehaviour {
 			pDirection = -1;
 
 		direction = pDirection;
-
-//		if(startAngle == newAngle) //in case the starting angle is the same as the new target angle
-//			direction *= -1;
-
+	
 		while(pDirection == direction)
 		{
 			if(angleShift == newAngle)
@@ -122,7 +115,7 @@ public class VisionCone : MonoBehaviour {
 			{
 
 				angleShift += direction * speed;
-				print ("angle : " + angleShift);
+				//print ("angle : " + angleShift);
 			
 				if(angleShift >= 360)
 					angleShift = 0;
@@ -130,29 +123,17 @@ public class VisionCone : MonoBehaviour {
 				else if(angleShift <= 0)
 					angleShift = 360;
 			}
-
-			//direction defaults to 1
-
-//			if(newAngle < currentAngle)
-//			{
-//				if((angleShift <= newAngle && direction == 1) || (angleShift >= currentAngle && direction == -1))
-//					direction *= -1;
-//			}
-//			else if (newAngle > currentAngle)
-//			{
-//				if((angleShift >= newAngle && direction == -1) || (angleShift <= currentAngle && direction == 1))
-//					direction *= -1;
-//			}
-
-
 			
 			directionToPlayer = Quaternion.Euler(0, 0, angleShift) * Vector3.right;
-			
+
 			drawRayTop = Quaternion.Euler (0, 0, angleShift + coneSize) * Vector3.right;
 			drawRayBot = Quaternion.Euler (0, 0, angleShift - coneSize) * Vector3.right;
-			
-			//exact direction the enemy is looking
-			//Debug.DrawRay (transform.position, directionToPlayer * 10, Color.green);
+
+
+			//this works
+			pivot.transform.rotation = Quaternion.Euler(0,0,angleShift);
+
+			//pivot.transform.RotateAround(rotatePoint, Vector3.forward * direction, 30 * Time.deltaTime);
 
 
 			yield return null;
@@ -235,10 +216,9 @@ public class VisionCone : MonoBehaviour {
 	
 	private void DrawConeArea()
 	{
-		GameObject plane = new GameObject("Plane");
+		GameObject plane = new GameObject("VisionCone");
 		MeshFilter meshFilter = (MeshFilter)plane.AddComponent(typeof(MeshFilter));
 		meshFilter.mesh = CreateMesh(length/2, 1.38f);
-		//meshFilter.mesh = CreateMesh(length/2, length/2);
 		MeshRenderer renderer = plane.AddComponent(typeof(MeshRenderer)) as MeshRenderer;
 		renderer.material.shader = Shader.Find ("Particles/Additive");
 
@@ -250,24 +230,24 @@ public class VisionCone : MonoBehaviour {
 			uvs[i] = new Vector2 (vertices[i].x, vertices[i].y);
 
 		meshFilter.mesh.uv = uvs;
-
-
-		//renderer.material.shader = Shader.Find ("Unlit/Texture");
-		Texture2D tex = new Texture2D(1, 1);
-		tex.SetPixel(0, 0, Color.yellow);
-		tex.Apply();
-		//renderer.material.mainTexture = tex;
-//		renderer.material.color = Color.yellow;
-
-		Material mat = (Material)Resources.Load("TestMat", typeof(Material));
-
-		if(mat == null)
-			print ("MAT IS NULL");
-
-		//renderer.material.mainTexture = (Texture)Resources.Load("TestTex", typeof(Texture));
 		renderer.material = (Material)Resources.Load("GreenTex", typeof(Material));
-		//renderer.material.SetTexture("_BumpMap", (Texture)Resources.Load("TestTex", typeof(Texture)));
-	}
+
+		visionCone = plane;
+		//visionCone.transform.parent = transform;
+
+		pivot.transform.position = transform.position;
+
+		visionCone.transform.position = transform.position;
+		visionCone.transform.position += new Vector3 ((visionCone.GetComponent<MeshRenderer> ().bounds.size.x)/2, 0, -1);
+
+		visionCone.transform.parent = pivot.transform;
+
+		pivot.transform.rotation = Quaternion.Euler (0, 0, angleShift);
+	
+		//visionCone.transform.RotateAround(rotatePoint, Vector3.forward * direction, 30 * Time.deltaTime);
+
+		rotatePoint = transform.position;
+	}	
 }
 //
 
