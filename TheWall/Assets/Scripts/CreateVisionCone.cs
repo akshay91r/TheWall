@@ -84,11 +84,8 @@ public class CreateVisionCone : MonoBehaviour {
 		//print ("Current index checking : " + currentIndex);
 		string[] splitString = angleValues[currentIndex].Split("-"[0]);
 		
-		newAngle = int.Parse (splitString[0]);
+		newAngle = float.Parse (splitString[0]);
 		newDirection = char.Parse (splitString[1]);
-
-		//print ("New angle : " + newAngle);
-		//print ("New direction : " + newDirection);
 	}
 
 	private IEnumerator Move(){
@@ -106,10 +103,14 @@ public class CreateVisionCone : MonoBehaviour {
 			pDirection = -1;
 
 		direction = pDirection;
+
+		print ("Angle Shift : " + angleShift);
+		print ("New angle : " + newAngle);
 	
 		while(pDirection == direction)
 		{
-			if(angleShift == newAngle)
+			//if(angleShift == newAngle)
+			if(Mathf.Abs(angleShift - newAngle) < 1.0f)
 				direction *= -1;
 			else
 			{
