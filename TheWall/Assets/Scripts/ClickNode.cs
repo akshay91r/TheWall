@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ClickNode : MonoBehaviour {
 
-	private Player player;
+	private GameObject[] players;
 
 	public int pathNo;
 	public int nodeNo;
@@ -17,7 +17,7 @@ public class ClickNode : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
+		players = GameObject.FindGameObjectsWithTag ("Player");
 		bb = GameObject.FindGameObjectWithTag ("Blackboard").GetComponent<Blackboard> ();
 	
 	}
@@ -47,13 +47,16 @@ public class ClickNode : MonoBehaviour {
 	void OnMouseDown()
 	{
 		if(unlocked)
-			player.MoveToPosition (transform.position);
+		{
+			foreach(GameObject g in players)
+				g.GetComponent<Player>().MoveToPosition (pathNo, transform.position);
+		}
 	}
 
 	void OnTriggerEnter(Collider col) 
 	{
 		if(col.gameObject.tag == "Player")
-			bb.HitNodeNumber(nodeNo);
+			bb.HitNodeNumber(pathNo, nodeNo);
 	}
 }
 

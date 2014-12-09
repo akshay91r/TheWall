@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Editor\RoomItemEditor.cs" />
      <Compile Include="Assets\Editor\VisionConeEditor.cs" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Users/akshayr/Documents/TheWall/TheWall/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>

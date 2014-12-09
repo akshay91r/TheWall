@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Blackboard : MonoBehaviour {
 
+	public int totalPaths = 1;
+
 	private Player player;
 	private GameObject[] soldiers;
 
@@ -12,7 +14,10 @@ public class Blackboard : MonoBehaviour {
 	private int currentNode;
 	private int currentPath;
 	private int nodesInPath;
-	private GameObject[] nodes;
+	private GameObject[,] nodes;
+
+	private int[] pathLengths;
+	private int pathsDone = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -21,35 +26,57 @@ public class Blackboard : MonoBehaviour {
 		soldiers = GameObject.FindGameObjectsWithTag ("Soldier");
 		stateText = GameObject.FindGameObjectWithTag ("StateText").GetComponent<GUIText> ();
 		retry = GameObject.FindGameObjectWithTag ("RetryButton").GetComponent<RetryButton> ();
-		InitializeNodes ();
+		InitializeNodeArray ();
 	}
 
-	private void InitializeNodes()
+	private void InitializeNodeArray()
 	{
-		nodes = GameObject.FindGameObjectsWithTag ("Node");
+		//all the nodes
+		GameObject[] linearArray = GameObject.FindGameObjectsWithTag ("Node");
+
+		nodes = new GameObject[10,5];
+		pathLengths = new int[10];
+
+		print ("TOTAL LENGTH PATH 0 " + nodes.GetLength (0));
+		print ("TOTAL LENGTH PATH 1 " + nodes.GetLength (1));
+	
+
+		for(int i = 0; i < linearArray.Length; i++)
+		{
+			ClickNode cn = linearArray[i].GetComponent<ClickNode>();
+			pathLengths[cn.pathNo] ++;
+		}
+
+		for(int i = 0; i < linearArray.Length; i++)
+		{
+			ClickNode cn = linearArray[i].GetComponent<ClickNode>();
+			//nodes[cn.pathNo,cn.nodeNo] = new GameObject();
+			nodes[cn.pathNo,cn.nodeNo] = linearArray[i];
+		}
 	}
 
-	public void HitNodeNumber(int numHit)
+	public void HitNodeNumber(int pathNo, int numHit)
 	{
-		print ("Node : " + numHit + " hit!");
-		//print ("total : " + nodes.Length);
-
-		if(numHit == (nodes.Length - 1))
-			WinGame();
+		if(numHit == pathLengths[pathNo]-1)
+			PathDone(pathNo);
+			//WinGame();
 		else
 		{
-			for(int i = 0; i < nodes.Length; i++)
+			for(int i = 0; i < pathLengths[pathNo]; i++)
 			{
 				//unlock the next node
-				if(nodes[i].GetComponent<ClickNode>().nodeNo == numHit + 1)
+				print ("Path : " + pathNo);
+				print ("Node no : " + i);
+
+				if(nodes[pathNo,i].GetComponent<ClickNode>().nodeNo == numHit + 1)
 				{
-					nodes[i].GetComponent<ClickNode>().UnlockNode();
+					nodes[pathNo,i].GetComponent<ClickNode>().UnlockNode();
 				}
 
 				//lock the last node
-				if(nodes[i].GetComponent<ClickNode>().nodeNo == numHit)
+				if(nodes[pathNo,i].GetComponent<ClickNode>().nodeNo == numHit)
 				{
-					nodes[i].GetComponent<ClickNode>().LockNode();
+					nodes[pathNo,i].GetComponent<ClickNode>().LockNode();
 				}
 			}
 		}
@@ -63,6 +90,22 @@ public class Blackboard : MonoBehaviour {
 		foreach(GameObject g in soldiers)
 			g.GetComponent<CreateVisionCone>().StopAllCoroutines();
 
+	}
+
+	private void PathDone(int pathNo)
+	{
+		stateText.text = "Path "+pathNo+" completed!";
+		pathsDone++;
+		if(pathsDone == totalPaths)
+			WinGame();
+		else
+			StartCoroutine(RemovePathCompleteText(1.5f));
+	}
+
+	private IEnumerator RemovePathCompleteText(float delay)
+	{
+		yield return new WaitForSeconds (delay);
+		stateText.text = "";
 	}
 
 	public void WinGame()

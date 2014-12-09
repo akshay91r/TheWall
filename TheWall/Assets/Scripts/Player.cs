@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
+	public int path = 0; //default
+
 	public float speed = 7.5f;
 	private bool moving = false;
 
@@ -21,9 +23,10 @@ public class Player : MonoBehaviour {
 	
 	}
 
-	public void MoveToPosition(Vector3 pos)
+	public void MoveToPosition(int pPath, Vector3 pos)
 	{
-		if(moving)
+		//if already moving, or got called from a node on a different path
+		if(moving || (pPath != path))
 		{
 			return;
 		}
