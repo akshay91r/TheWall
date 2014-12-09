@@ -46,11 +46,19 @@ public class ClickNode : MonoBehaviour {
 
 	void OnMouseDown()
 	{
+		if(bb.isGameOver())
+			return;
+
 		if(unlocked)
 		{
 			foreach(GameObject g in players)
 				g.GetComponent<Player>().MoveToPosition (pathNo, transform.position);
 		}
+	}
+
+	public void HitByPlayer()
+	{
+		bb.HitNodeNumber(pathNo, nodeNo);
 	}
 
 	void OnTriggerEnter(Collider col) 

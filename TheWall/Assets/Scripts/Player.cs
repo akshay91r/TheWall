@@ -20,7 +20,6 @@ public class Player : MonoBehaviour {
 
 		playerSprite = GetComponent<SpriteRenderer> ().sprite;
 		playerSprite = redHuman;
-	
 	}
 
 	public void MoveToPosition(int pPath, Vector3 pos)
@@ -53,5 +52,11 @@ public class Player : MonoBehaviour {
 	{
 		GetComponent<SpriteRenderer> ().sprite = redHuman;
 		StopAllCoroutines ();
+	}
+
+	void OnCollisionEnter(Collision col) 
+	{
+		if(col.gameObject.tag == "Node")
+			col.gameObject.GetComponent<ClickNode>().HitByPlayer();
 	}
 }

@@ -19,6 +19,8 @@ public class Blackboard : MonoBehaviour {
 	private int[] pathLengths;
 	private int pathsDone = 0;
 
+	private bool gameOver = false;
+
 	// Use this for initialization
 	void Start () {
 
@@ -84,12 +86,18 @@ public class Blackboard : MonoBehaviour {
 
 	public void GameOver()
 	{
+		gameOver = true;
 		player.Die ();
 		stateText.text = "You Lose";
 		retry.Activate();
 		foreach(GameObject g in soldiers)
 			g.GetComponent<CreateVisionCone>().StopAllCoroutines();
 
+	}
+
+	public bool isGameOver()
+	{
+		return gameOver;
 	}
 
 	private void PathDone(int pathNo)

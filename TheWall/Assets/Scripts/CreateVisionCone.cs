@@ -226,6 +226,9 @@ public class CreateVisionCone : MonoBehaviour {
 		MeshRenderer renderer = plane.AddComponent(typeof(MeshRenderer)) as MeshRenderer;
 		renderer.material.shader = Shader.Find ("Particles/Additive");
 
+		renderer.sortingLayerName = "Player";
+		renderer.sortingOrder = 2;
+
 
 		Vector3[]  vertices = meshFilter.mesh.vertices;
 		Vector2[] uvs = new Vector2[vertices.Length];
