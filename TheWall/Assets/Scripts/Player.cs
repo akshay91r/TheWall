@@ -6,7 +6,6 @@ public class Player : MonoBehaviour {
 	public float speed = 7.5f;
 	private bool moving = false;
 
-	private Blackboard bb;
 
 	public bool alive = true;
 	private Sprite playerSprite;
@@ -17,8 +16,6 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		bb = GameObject.FindGameObjectWithTag ("Blackboard").GetComponent<Blackboard> ();
-
 		playerSprite = GetComponent<SpriteRenderer> ().sprite;
 		playerSprite = redHuman;
 	
@@ -28,8 +25,6 @@ public class Player : MonoBehaviour {
 	{
 		if(moving)
 		{
-			StopAllCoroutines();
-			moving = false;
 			return;
 		}
 
@@ -49,8 +44,6 @@ public class Player : MonoBehaviour {
 
 		moving = false;
 		yield return new WaitForSeconds(0f);
-
-		bb.WinGame ();
 	}
 
 	public void Die()
