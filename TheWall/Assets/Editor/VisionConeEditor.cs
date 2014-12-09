@@ -9,7 +9,8 @@ public class VisionConeEditor : Editor {
 
 		//all other public variables
 		VisionCone myTarget = (VisionCone)target;
-		
+
+		//myTarget.coneTexPath = EditorGUILayout.TextField("Cone Texture", myTarget.coneTexPath);
 		myTarget.speed = EditorGUILayout.FloatField("Speed", myTarget.speed);
 		myTarget.coneSize = EditorGUILayout.FloatField("Cone Size", myTarget.coneSize);
 		myTarget.length = EditorGUILayout.FloatField("Length", myTarget.length);

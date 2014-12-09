@@ -14,6 +14,8 @@ public class VisionCone : MonoBehaviour {
 	private int angleCount;
 	public string[] angleValues;
 
+	//public string coneTexPath;
+
 	public float speed = 1.0f;
 	public float startAngle = 225;
 	public float coneSize = 10;
@@ -169,54 +171,6 @@ public class VisionCone : MonoBehaviour {
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private float CalcAngle(Vector3 newDirection) {
 		// the vector that we want to measure an angle from
 		
@@ -287,11 +241,32 @@ public class VisionCone : MonoBehaviour {
 		//meshFilter.mesh = CreateMesh(length/2, length/2);
 		MeshRenderer renderer = plane.AddComponent(typeof(MeshRenderer)) as MeshRenderer;
 		renderer.material.shader = Shader.Find ("Particles/Additive");
+
+
+		Vector3[]  vertices = meshFilter.mesh.vertices;
+		Vector2[] uvs = new Vector2[vertices.Length];
+
+		for (int i = 0 ; i < uvs.Length; i++)
+			uvs[i] = new Vector2 (vertices[i].x, vertices[i].y);
+
+		meshFilter.mesh.uv = uvs;
+
+
+		//renderer.material.shader = Shader.Find ("Unlit/Texture");
 		Texture2D tex = new Texture2D(1, 1);
 		tex.SetPixel(0, 0, Color.yellow);
 		tex.Apply();
-		renderer.material.mainTexture = tex;
-		renderer.material.color = Color.yellow;
+		//renderer.material.mainTexture = tex;
+//		renderer.material.color = Color.yellow;
+
+		Material mat = (Material)Resources.Load("TestMat", typeof(Material));
+
+		if(mat == null)
+			print ("MAT IS NULL");
+
+		//renderer.material.mainTexture = (Texture)Resources.Load("TestTex", typeof(Texture));
+		renderer.material = (Material)Resources.Load("GreenTex", typeof(Material));
+		//renderer.material.SetTexture("_BumpMap", (Texture)Resources.Load("TestTex", typeof(Texture)));
 	}
 }
 //
