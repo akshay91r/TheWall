@@ -247,6 +247,7 @@ public class CreateVisionCone : MonoBehaviour {
 		visionCone.transform.position = transform.position;
 		visionCone.transform.position += new Vector3 ((visionCone.GetComponent<MeshRenderer> ().bounds.size.x)/2, 0, -0.5f);
 		visionCone.AddComponent(typeof(MeshCollider));
+		visionCone.GetComponent<MeshCollider>().isTrigger = true;
 		visionCone.AddComponent(typeof(VisionCone));
 
 
