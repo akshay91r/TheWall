@@ -59,4 +59,10 @@ public class Player : MonoBehaviour {
 		if(col.gameObject.tag == "Node")
 			col.gameObject.GetComponent<ClickNode>().HitByPlayer();
 	}
+
+	void FixedUpdate()
+	{
+		//constantly move by zero to keep picking up collisions
+		rigidbody.AddForce (0, 0, 0);
+	}
 }
