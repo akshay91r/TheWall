@@ -87,7 +87,6 @@ public class Blackboard : MonoBehaviour {
 	public void GameOver()
 	{
 		gameOver = true;
-		player.Die ();
 		stateText.text = "You Lose";
 		retry.Activate();
 		foreach(GameObject g in soldiers)
