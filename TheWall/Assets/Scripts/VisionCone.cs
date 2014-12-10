@@ -15,6 +15,6 @@ public class VisionCone : MonoBehaviour {
 	void OnTriggerEnter(Collider col) 
 	{
 		if(col.gameObject.tag == "Player")
-			bb.GameOver();
+			col.gameObject.GetComponent<Player>().Die ();
 	}
 }

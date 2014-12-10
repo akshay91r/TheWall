@@ -1,6 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Blackboard.cs">
+    <Files>
+      <File FileName="Assets\Scripts\ClickNode.cs" Line="21" Column="84" />
+      <File FileName="Assets\Scripts\Player.cs" Line="30" Column="69" />
+      <File FileName="Assets\Scripts\Blackboard.cs" Line="79" Column="67" />
+      <File FileName="Assets\Scripts\VisionCone.cs" Line="18" Column="49" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

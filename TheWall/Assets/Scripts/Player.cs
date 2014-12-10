@@ -15,11 +15,14 @@ public class Player : MonoBehaviour {
 	public Sprite human;
 	public Sprite redHuman;
 
+	private Blackboard bb;
+
 	// Use this for initialization
 	void Start () {
 
 		playerSprite = GetComponent<SpriteRenderer> ().sprite;
 		playerSprite = redHuman;
+		bb = GameObject.FindGameObjectWithTag ("Blackboard").GetComponent<Blackboard> ();
 	}
 
 	public void MoveToPosition(int pPath, Vector3 pos)
@@ -52,6 +55,7 @@ public class Player : MonoBehaviour {
 	{
 		GetComponent<SpriteRenderer> ().sprite = redHuman;
 		StopAllCoroutines ();
+		bb.GameOver ();
 	}
 
 	void OnCollisionEnter(Collision col) 
