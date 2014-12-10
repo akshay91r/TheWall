@@ -36,7 +36,7 @@ public class Blackboard : MonoBehaviour {
 		//all the nodes
 		GameObject[] linearArray = GameObject.FindGameObjectsWithTag ("Node");
 
-		nodes = new GameObject[10,5];
+		nodes = new GameObject[10,10];
 		pathLengths = new int[10];
 
 		print ("TOTAL LENGTH PATH 0 " + nodes.GetLength (0));
