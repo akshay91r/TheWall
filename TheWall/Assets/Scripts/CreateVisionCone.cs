@@ -237,7 +237,7 @@ public class CreateVisionCone : MonoBehaviour {
 			uvs[i] = new Vector2 (vertices[i].x, vertices[i].y);
 
 		meshFilter.mesh.uv = uvs;
-		renderer.material = (Material)Resources.Load("GreenTex", typeof(Material));
+		renderer.material = (Material)Resources.Load("YellowTex", typeof(Material));
 
 		visionCone = plane;
 		//visionCone.transform.parent = transform;
