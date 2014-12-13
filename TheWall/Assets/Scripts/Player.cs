@@ -10,6 +10,8 @@ public class Player : MonoBehaviour {
 	private bool moving = false;
 	
 	public float corpseTime = 1;
+
+	private float playerScale;
 	
 	public bool alive = true;
 	private Sprite playerSprite;
@@ -24,6 +26,7 @@ public class Player : MonoBehaviour {
 		
 		playerSprite = GetComponent<SpriteRenderer> ().sprite;
 		playerSprite = redHuman;
+		playerScale = transform.localScale.x;
 		bb = GameObject.FindGameObjectWithTag ("Blackboard").GetComponent<Blackboard> ();
 	}
 	
@@ -40,8 +43,17 @@ public class Player : MonoBehaviour {
 	}
 	
 	private IEnumerator Move(Vector3 pos){
-		//
-		
+
+		float multiplier = playerSprite.bounds.size.y / 2.6f;
+
+		//float offset = playerSprite.bounds.size.y / 2.6f;
+
+		float offset = multiplier * playerScale;
+
+		print ("offset = " + offset);
+
+		pos += new Vector3 (0, offset, 0);
+
 		while(Vector3.Distance(transform.position, pos) > 0.05f)
 		{
 			transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime);

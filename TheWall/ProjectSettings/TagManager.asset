@@ -52,3 +52,7 @@ TagManager:
     userID: 1
     uniqueID: 1390394803
     locked: 0
+  - name: LevelDone
+    userID: 2
+    uniqueID: 1437823489
+    locked: 0
