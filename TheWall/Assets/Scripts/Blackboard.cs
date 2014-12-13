@@ -10,6 +10,8 @@ public class Blackboard : MonoBehaviour {
 	public GameObject playerObjPath2;
 	private Vector3[] playerStartPositions;
 	private Vector3[] playerStartScales;
+
+	private ProgressBar pb;
 	
 	private Player player;
 	private GameObject[] soldiers;
@@ -38,6 +40,7 @@ public class Blackboard : MonoBehaviour {
 		stateText = GameObject.FindGameObjectWithTag ("StateText").GetComponent<GUIText> ();
 		scoreText = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<GUIText> ();
 		retry = GameObject.FindGameObjectWithTag ("RetryButton").GetComponent<RetryButton> ();
+		pb = GameObject.FindGameObjectWithTag ("ProgressBar").GetComponent<ProgressBar> ();
 		StorePlayerStartPositions ();
 		InitializeNodeArray ();
 	}
@@ -83,6 +86,11 @@ public class Blackboard : MonoBehaviour {
 			nodes[cn.pathNo,cn.nodeNo] = linearArray[i];
 		}
 	}
+
+//	private void GetScore()
+//	{
+//		return playersAcross;
+//	}
 	
 	public void SpawnPlayerAtPath (int pathNo)
 	{
@@ -170,6 +178,7 @@ public class Blackboard : MonoBehaviour {
 	{
 		stateText.text = "Path "+pathNo+" completed!";
 		playersAcross++;
+		pb.UpdateScore (playersAcross);
 		pathsDone++;
 		print ("paths done : " + pathsDone);
 		
