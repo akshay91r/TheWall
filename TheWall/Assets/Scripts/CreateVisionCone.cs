@@ -107,7 +107,7 @@ public class CreateVisionCone : MonoBehaviour {
 		while(pDirection == direction)
 		{
 			//if(angleShift == newAngle)
-			if(Mathf.Abs(angleShift - newAngle) < 1.0f)
+			if(Mathf.Abs(angleShift - newAngle) < 3.0f)
 				direction *= -1;
 			else
 			{
