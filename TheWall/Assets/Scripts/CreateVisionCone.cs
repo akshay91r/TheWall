@@ -15,6 +15,8 @@ public class CreateVisionCone : MonoBehaviour {
 	public string[] angleValues;
 	
 	//public string coneTexPath;
+
+	public float pivotOffset = 1.0f;
 	
 	public float speed = 1.0f;
 	public float startAngle = 225;
@@ -238,6 +240,7 @@ public class CreateVisionCone : MonoBehaviour {
 		//visionCone.transform.parent = transform;
 		
 		pivot.transform.position = transform.position;
+		//pivot.transform.position += new Vector3 (0, pivotOffset, 0);
 		
 		visionCone.transform.position = transform.position;
 		visionCone.transform.position += new Vector3 ((visionCone.GetComponent<MeshRenderer> ().bounds.size.x)/2, 0, -0.5f);

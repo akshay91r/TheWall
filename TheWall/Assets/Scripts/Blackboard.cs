@@ -135,15 +135,16 @@ public class Blackboard : MonoBehaviour {
 	
 	public void HitNodeNumber(int pathNo, int numHit)
 	{
+		print ("HIT NODE WITH PATH : " + pathNo + " AND NODE :" + numHit);
 		if(numHit == pathLengths[pathNo]-1)
 			PathDone(pathNo);
 		//WinGame();
 		else
 		{
+
 			for(int i = 0; i < pathLengths[pathNo]; i++)
 			{
 				//unlock the next node
-				
 				if(nodes[pathNo,i].GetComponent<ClickNode>().nodeNo == numHit + 1)
 				{
 					nodes[pathNo,i].GetComponent<ClickNode>().UnlockNode();

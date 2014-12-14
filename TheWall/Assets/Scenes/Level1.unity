@@ -1689,12 +1689,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angleValues:
-  - 225-A
-  - 315-C
+  - 255-A
+  - 295-C
   speed: 3
-  startAngle: 225
+  startAngle: 90
   coneSize: 5
-  length: 4
+  length: 6
   waitTime: .125
   initialDelay: .5
 --- !u!212 &2044866022
@@ -1727,7 +1727,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2044866020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 3.08999991, z: 0}
+  m_LocalPosition: {x: -2.46000004, y: 3.01999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1387125523}

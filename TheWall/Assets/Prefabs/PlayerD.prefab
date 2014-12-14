@@ -56,8 +56,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.44000006, y: 9.23999977, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.78899956, y: 2.26910353, z: 1}
+  m_Center: {x: -.0550341606, y: .330200195, z: 0}
 --- !u!114 &11486128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,7 +96,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1390394803
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 941f8e31dc4bc83499dc88e5598bf75c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c177adf4075d0f4d93c5f65dda754e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

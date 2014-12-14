@@ -50,7 +50,7 @@ public class Player : MonoBehaviour {
 
 		float offset = multiplier * playerScale;
 
-		print ("offset = " + offset);
+		//print ("offset = " + offset);
 
 		pos += new Vector3 (0, offset, 0);
 

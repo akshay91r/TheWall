@@ -62,7 +62,7 @@ public class ClickNode : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider col) 
 	{
-		if(col.gameObject.tag == "Player")
+		if(col.gameObject.tag == "Player" && (col.gameObject.GetComponent<Player>().path == pathNo)) //player is on the same path as the node
 			bb.HitNodeNumber(pathNo, nodeNo);
 	}
 }
