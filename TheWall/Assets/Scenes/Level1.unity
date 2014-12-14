@@ -177,6 +177,7 @@ MonoBehaviour:
   angleValues:
   - 225-C
   - 315-A
+  pivotOffset: 1
   speed: 1
   startAngle: 0
   coneSize: 10
@@ -234,7 +235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &317119385
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -363,8 +364,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathNo: 0
   nodeNo: 0
-  lockSprite: {fileID: 21300000, guid: 43441f759339d05449e329878965bad7, type: 3}
-  unlockSprite: {fileID: 21300000, guid: 70d5174216914bb4894dc0ef30e05d5f, type: 3}
+  lockSprite: {fileID: 21300000, guid: d185392c54cdb7f448409f6582cef15d, type: 3}
+  unlockSprite: {fileID: 21300000, guid: 2ffba7c19e20e10429ca07528ccaa1ff, type: 3}
   unlocked: 1
 --- !u!212 &376074555
 SpriteRenderer:
@@ -704,7 +705,7 @@ MonoBehaviour:
   pathNo: 0
   nodeNo: 1
   lockSprite: {fileID: 21300000, guid: 43441f759339d05449e329878965bad7, type: 3}
-  unlockSprite: {fileID: 21300000, guid: 70d5174216914bb4894dc0ef30e05d5f, type: 3}
+  unlockSprite: {fileID: 21300000, guid: e7e03d1420360694e97b5a14acd65921, type: 3}
   unlocked: 0
 --- !u!212 &756575678
 SpriteRenderer:
@@ -786,6 +787,7 @@ MonoBehaviour:
   angleValues:
   - 225-C
   - 315-A
+  pivotOffset: 1
   speed: .699999988
   startAngle: 270
   coneSize: 8
@@ -876,7 +878,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 434402, guid: ec38945032db8f344a13c896236d2dcb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.48999977
+      value: 4.3499999
       objectReference: {fileID: 0}
     - target: {fileID: 434402, guid: ec38945032db8f344a13c896236d2dcb, type: 2}
       propertyPath: m_LocalPosition.y
@@ -917,6 +919,18 @@ Prefab:
     - target: {fileID: 434402, guid: ec38945032db8f344a13c896236d2dcb, type: 2}
       propertyPath: m_LocalScale.z
       value: 2.39690375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534402, guid: ec38945032db8f344a13c896236d2dcb, type: 2}
+      propertyPath: m_Size.y
+      value: 2.16602516
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534402, guid: ec38945032db8f344a13c896236d2dcb, type: 2}
+      propertyPath: m_Center.y
+      value: .429027438
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434402, guid: ec38945032db8f344a13c896236d2dcb, type: 2}
+      propertyPath: speed
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec38945032db8f344a13c896236d2dcb, type: 2}
@@ -1065,8 +1079,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.81990087, y: 2.92489052, z: 1}
-  m_Center: {x: -.0165343285, y: .0495946407, z: 0}
+  m_Size: {x: 1.81990087, y: 2.16602516, z: 1}
+  m_Center: {x: -.0165343285, y: .429027438, z: 0}
 --- !u!114 &954460847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1080,7 +1094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 0
-  speed: 5
+  speed: 6
   timeToMoveIn: .5
   corpseTime: 1
   alive: 1
@@ -1116,7 +1130,7 @@ Transform:
   m_PrefabInternal: {fileID: 817319259}
   m_GameObject: {fileID: 954460844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.48999977, y: -1.91999996, z: 0}
+  m_LocalPosition: {x: 4.3499999, y: -1.91999996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 2.39690375}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1263,8 +1277,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathNo: 0
   nodeNo: 3
-  lockSprite: {fileID: 21300000, guid: 43441f759339d05449e329878965bad7, type: 3}
-  unlockSprite: {fileID: 21300000, guid: 70d5174216914bb4894dc0ef30e05d5f, type: 3}
+  lockSprite: {fileID: 21300000, guid: fa04a5f4efa7e794591a2d4db2130708, type: 3}
+  unlockSprite: {fileID: 21300000, guid: 4ba365c6328b5a4449f8038f6a836be0, type: 3}
   unlocked: 0
 --- !u!212 &1087962134
 SpriteRenderer:
@@ -1397,7 +1411,7 @@ MonoBehaviour:
   pathNo: 0
   nodeNo: 2
   lockSprite: {fileID: 21300000, guid: 43441f759339d05449e329878965bad7, type: 3}
-  unlockSprite: {fileID: 21300000, guid: 70d5174216914bb4894dc0ef30e05d5f, type: 3}
+  unlockSprite: {fileID: 21300000, guid: e7e03d1420360694e97b5a14acd65921, type: 3}
   unlocked: 0
 --- !u!212 &1269604650
 SpriteRenderer:
@@ -1691,6 +1705,7 @@ MonoBehaviour:
   angleValues:
   - 255-A
   - 295-C
+  pivotOffset: 1
   speed: 3
   startAngle: 90
   coneSize: 5
@@ -1718,7 +1733,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1390394803
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0c3cd328a0881014b9b7951c1cd0a440, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 792c5b664be94de4abd60266ea8a0a0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2044866023
 Transform:
