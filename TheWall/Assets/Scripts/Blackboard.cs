@@ -8,9 +8,12 @@ public class Blackboard : MonoBehaviour {
 	public GameObject playerObjPath0;
 	public GameObject playerObjPath1;
 	public GameObject playerObjPath2;
+	
+	private LevelCompleteScreen levelCompleteScreen;
+	
 	private Vector3[] playerStartPositions;
 	private Vector3[] playerStartScales;
-
+	
 	private ProgressBar pb;
 	
 	private Player player;
@@ -18,9 +21,8 @@ public class Blackboard : MonoBehaviour {
 	
 	private int playersAcross = 0;
 	
-	private GUIText stateText;
+	//private GUIText stateText;
 	private GUIText scoreText;
-	private RetryButton retry;
 	
 	private int currentNode;
 	private int currentPath;
@@ -37,10 +39,10 @@ public class Blackboard : MonoBehaviour {
 		
 		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
 		soldiers = GameObject.FindGameObjectsWithTag ("Soldier");
-		stateText = GameObject.FindGameObjectWithTag ("StateText").GetComponent<GUIText> ();
+		//stateText = GameObject.FindGameObjectWithTag ("StateText").GetComponent<GUIText> ();
 		scoreText = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<GUIText> ();
-		retry = GameObject.FindGameObjectWithTag ("RetryButton").GetComponent<RetryButton> ();
 		pb = GameObject.FindGameObjectWithTag ("ProgressBar").GetComponent<ProgressBar> ();
+		levelCompleteScreen = GameObject.FindGameObjectWithTag ("LevelCompleteScreen").GetComponent<LevelCompleteScreen> ();
 		StorePlayerStartPositions ();
 		InitializeNodeArray ();
 	}
@@ -86,16 +88,21 @@ public class Blackboard : MonoBehaviour {
 			nodes[cn.pathNo,cn.nodeNo] = linearArray[i];
 		}
 	}
-
-//	private void GetScore()
-//	{
-//		return playersAcross;
-//	}
+	
+	public int GetCurrentLevel()
+	{
+		return (Application.loadedLevel);
+	}
+	
+	public int GetScore()
+	{
+		return playersAcross;
+	}
 	
 	public void SpawnPlayerAtPath (int pathNo)
 	{
 		Vector3 spawnPos = playerStartPositions [pathNo];
-
+		
 		GameObject newPlayer;
 		
 		//spawn off screen
@@ -111,7 +118,7 @@ public class Blackboard : MonoBehaviour {
 			print ("Invalid path");
 			return;
 		}
-
+		
 		newPlayer.transform.localScale = playerStartScales [pathNo];
 		newPlayer.GetComponent<Player> ().path = pathNo;
 		newPlayer.GetComponent<Player>().GetIn (playerStartPositions [pathNo]);
@@ -135,16 +142,15 @@ public class Blackboard : MonoBehaviour {
 	
 	public void HitNodeNumber(int pathNo, int numHit)
 	{
-		print ("HIT NODE WITH PATH : " + pathNo + " AND NODE :" + numHit);
 		if(numHit == pathLengths[pathNo]-1)
 			PathDone(pathNo);
 		//WinGame();
 		else
 		{
-
 			for(int i = 0; i < pathLengths[pathNo]; i++)
 			{
 				//unlock the next node
+				
 				if(nodes[pathNo,i].GetComponent<ClickNode>().nodeNo == numHit + 1)
 				{
 					nodes[pathNo,i].GetComponent<ClickNode>().UnlockNode();
@@ -162,12 +168,12 @@ public class Blackboard : MonoBehaviour {
 	public void GameOver()
 	{
 		gameOver = true;
-		stateText.text = "Time up!";
-		scoreText.text = "Score: " + playersAcross;
-		retry.Activate();
+		//stateText.text = "Time up!";
+		scoreText.text = "Final Score: " + playersAcross;
 		foreach(GameObject g in soldiers)
 			g.GetComponent<CreateVisionCone>().StopAllCoroutines();
 		
+		levelCompleteScreen.MoveIn ();
 	}
 	
 	public bool isGameOver()
@@ -177,11 +183,11 @@ public class Blackboard : MonoBehaviour {
 	
 	private void PathDone(int pathNo)
 	{
-		stateText.text = "Path "+pathNo+" completed!";
+		//stateText.text = "Path "+pathNo+" completed!";
 		playersAcross++;
 		pb.UpdateScore (playersAcross);
 		pathsDone++;
-		print ("paths done : " + pathsDone);
+		//print ("paths done : " + pathsDone);
 		
 		GameObject[] players = GameObject.FindGameObjectsWithTag ("Player");
 		
@@ -204,18 +210,18 @@ public class Blackboard : MonoBehaviour {
 	private IEnumerator RemovePathCompleteText(float delay)
 	{
 		yield return new WaitForSeconds (delay);
-		stateText.text = "";
+		//stateText.text = "";
 	}
 	
-	private void WinGame()
-	{
-		foreach(GameObject g in soldiers)
-			g.GetComponent<CreateVisionCone>().StopAllCoroutines();
-		
-		stateText.text = "You Win!";
-		scoreText.text = "Score: " + playersAcross;
-		retry.Activate();
-	}
+	//	private void WinGame()
+	//	{
+	//		foreach(GameObject g in soldiers)
+	//			g.GetComponent<CreateVisionCone>().StopAllCoroutines();
+	//		
+	//		stateText.text = "You Win!";
+	//		scoreText.text = "Score: " + playersAcross;
+	//		retry.Activate();
+	//	}
 	
 	public void RestartLevel()
 	{
