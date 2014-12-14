@@ -686,7 +686,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 434402, guid: ec38945032db8f344a13c896236d2dcb, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 434402, guid: ec38945032db8f344a13c896236d2dcb, type: 2}
       propertyPath: m_LocalScale.x
@@ -711,6 +711,10 @@ Prefab:
     - target: {fileID: 11434402, guid: ec38945032db8f344a13c896236d2dcb, type: 2}
       propertyPath: speed
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434402, guid: ec38945032db8f344a13c896236d2dcb, type: 2}
+      propertyPath: corpseTime
+      value: .75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec38945032db8f344a13c896236d2dcb, type: 2}
@@ -888,7 +892,7 @@ MonoBehaviour:
   path: 0
   speed: 6
   timeToMoveIn: .5
-  corpseTime: 1
+  corpseTime: .75
   alive: 1
   human: {fileID: 21300000, guid: 0c177adf4075d0f4d93c5f65dda754e1, type: 3}
   redHuman: {fileID: 21300000, guid: 51bd0e8c8b14072468cfbc708f4ea9ad, type: 3}

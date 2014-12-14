@@ -289,7 +289,7 @@ Transform:
   m_LocalScale: {x: .47724998, y: .47724998, z: .47724998}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!1001 &113200888
 Prefab:
   m_ObjectHideFlags: 0
@@ -2003,7 +2003,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1 &1560500245
 GameObject:
   m_ObjectHideFlags: 0

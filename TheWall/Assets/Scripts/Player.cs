@@ -127,6 +127,20 @@ public class Player : MonoBehaviour {
 	
 	private IEnumerator RemoveAfterTime()
 	{
+//		var desiredRotation = Quaternion.Euler (-90, 0, 0);
+//		print ("Difference = " + Quaternion.Angle (transform.rotation, desiredRotation));
+//		float turningSpeed = Quaternion.Angle (transform.rotation, desiredRotation) / 2;
+//
+//		while(Quaternion.Angle(transform.rotation, desiredRotation) != 0)
+//		{
+//			print ("Angle = " + Quaternion.Angle(transform.rotation, desiredRotation));
+//			transform.rotation = Quaternion.Slerp (transform.rotation, desiredRotation, Time.time);
+//			
+//			yield return null;
+//		}
+//
+//		print ("Courinte done");
+
 		yield return new WaitForSeconds (corpseTime);
 		Destroy (gameObject);
 	}

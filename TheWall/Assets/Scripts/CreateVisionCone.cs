@@ -7,7 +7,7 @@ public class CreateVisionCone : MonoBehaviour {
 	Vector3 drawRayTop;
 	Vector3 drawRayBot;
 	
-	Player player;
+	//Player player;
 	
 	float angleShift;
 	
@@ -41,11 +41,11 @@ public class CreateVisionCone : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player>();
+		//player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player>();
 		bb = GameObject.FindGameObjectWithTag ("Blackboard").GetComponent<Blackboard> ();
 		pivot = transform.Find ("Pivot").gameObject;
 		
-		directionToPlayer = (player.transform.position - transform.position).normalized;
+		//directionToPlayer = (player.transform.position - transform.position).normalized;
 		
 		angleShift = startAngle;
 		currentAngle = startAngle;

@@ -122,10 +122,32 @@ public class Blackboard : MonoBehaviour {
 		newPlayer.transform.localScale = playerStartScales [pathNo];
 		newPlayer.GetComponent<Player> ().path = pathNo;
 		newPlayer.GetComponent<Player>().GetIn (playerStartPositions [pathNo]);
-		print ("new spawned");
+		//print ("new spawned");
 		
 		ResetPath (pathNo);
 		
+	}
+
+	public void LockAllNodes()
+	{
+		GameObject[] nodes = GameObject.FindGameObjectsWithTag ("Node");
+		foreach(GameObject n in nodes)
+			n.GetComponent<SphereCollider>().enabled = false;
+
+//		GameObject[] players = GameObject.FindGameObjectsWithTag ("Player");
+//		foreach(GameObject p in players)
+//			p.GetComponent<Player>().enabled = false;
+	}
+
+	public void UnlockAllNodes()
+	{
+		GameObject[] nodes = GameObject.FindGameObjectsWithTag ("Node");
+		foreach(GameObject n in nodes)
+			n.GetComponent<SphereCollider>().enabled = true;
+
+//		GameObject[] players = GameObject.FindGameObjectsWithTag ("Player");
+//		foreach(GameObject p in players)
+//			p.GetComponent<Player>().enabled = true;
 	}
 	
 	private void ResetPath(int pathNo)
@@ -172,6 +194,10 @@ public class Blackboard : MonoBehaviour {
 		scoreText.text = "Final Score: " + playersAcross;
 		foreach(GameObject g in soldiers)
 			g.GetComponent<CreateVisionCone>().StopAllCoroutines();
+
+		GameObject[] players = GameObject.FindGameObjectsWithTag ("Player");
+		foreach(GameObject p in players)
+			p.GetComponent<Player>().StopAllCoroutines();
 		
 		levelCompleteScreen.MoveIn ();
 	}

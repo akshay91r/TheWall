@@ -39,7 +39,10 @@ public class LevelStartScreen : MonoBehaviour {
 
 		//first time scene running
 		if(!levelIntroDone[currentLevel])
+		{
+			bb.LockAllNodes();
 			transform.position = new Vector3 (0, 0, 0);
+		}
 		else //start game immediately
 			timer.GetComponent<Timer> ().StartTimer ();
 	}
@@ -66,6 +69,7 @@ public class LevelStartScreen : MonoBehaviour {
 		yield return new WaitForSeconds(0f);
 
 		levelIntroDone [currentLevel] = true;
+		bb.UnlockAllNodes ();
 
 		//start timer when it moves out
 		timer.GetComponent<Timer> ().StartTimer ();
