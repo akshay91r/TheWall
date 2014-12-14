@@ -41,7 +41,8 @@ public class Timer : MonoBehaviour {
 			
 			textTime = string.Format ("{0:00}:{1:00}", minutes, seconds); 
 			//text.Time is the time that will be displayed.
-			GetComponent<GUIText>().text = "Time left : " + textTime;
+			//GetComponent<GUIText>().text = "Time left : " + textTime;
+			GetComponent<GUIText>().text = textTime;
 			
 			if(timeRemaining <= 1)
 			{

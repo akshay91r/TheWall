@@ -276,7 +276,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 90f2a48bb6a22514aa436eeb4862a420, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 676e893b56b18f446ad995a60c175cf3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &113116471
 Transform:
@@ -285,8 +285,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 113116469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0799999982, y: 1.83000004, z: -1.71000004}
-  m_LocalScale: {x: .47724998, y: .47724998, z: .47724998}
+  m_LocalPosition: {x: .0649999976, y: 1.76199996, z: -1.71000004}
+  m_LocalScale: {x: .541885257, y: .541885495, z: .541885495}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -765,7 +765,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 59ffc333b4e972b42805f7ddf695785a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e929296ec3df5243a3167e9a8800042, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &653221433
 Transform:
@@ -1390,11 +1390,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 498044, guid: af9a44301ed565c40821c258e8eaeab1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .5
+      value: .0500000007
       objectReference: {fileID: 0}
     - target: {fileID: 498044, guid: af9a44301ed565c40821c258e8eaeab1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .800000012
+      value: .839999974
       objectReference: {fileID: 0}
     - target: {fileID: 498044, guid: af9a44301ed565c40821c258e8eaeab1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1418,7 +1418,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 498044, guid: af9a44301ed565c40821c258e8eaeab1, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 11498044, guid: af9a44301ed565c40821c258e8eaeab1, type: 2}
       propertyPath: durationSeconds
@@ -1983,13 +1983,13 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 0}
+  m_Font: {fileID: 12800000, guid: ee1b1d84a04abf94591bc9cf2abde6b0, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 30
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!4 &1439977762
@@ -1999,7 +1999,7 @@ Transform:
   m_PrefabInternal: {fileID: 1067297868}
   m_GameObject: {fileID: 1439977759}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .5, y: .800000012, z: 0}
+  m_LocalPosition: {x: .0500000007, y: .839999974, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
