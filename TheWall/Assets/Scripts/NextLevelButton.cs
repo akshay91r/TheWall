@@ -59,7 +59,8 @@ public class NextLevelButton : MonoBehaviour {
 		clicked = false;
 		GetComponent<SpriteRenderer> ().sprite = InactiveSprite;
 
-		transform.parent.gameObject.GetComponent<LevelCompleteScreen> ().MoveOut ();
+		//this gets cut abruptly
+		//transform.parent.gameObject.GetComponent<LevelCompleteScreen> ().MoveOut ();
 
 		//replace this when this button isn't drawn for the last level
 		if((Application.loadedLevel+1) < numberOfLevels)

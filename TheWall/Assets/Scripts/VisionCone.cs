@@ -15,6 +15,9 @@ public class VisionCone : MonoBehaviour {
 	void OnTriggerEnter(Collider col) 
 	{
 		if(col.gameObject.tag == "Player")
+		{
+			transform.parent.transform.parent.gameObject.GetComponent<CreateVisionCone>().ShowGuardAlert(); //parent = pivot, parent of pivot = guard
 			col.gameObject.GetComponent<Player>().Die ();
+		}
 	}
 }

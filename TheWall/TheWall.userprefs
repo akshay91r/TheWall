@@ -1,16 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ShowCreditsButton.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NextLevelButton.cs">
     <Files>
+      <File FileName="Assets\Scripts\CreateVisionCone.cs" Line="223" Column="3" />
+      <File FileName="Assets\Scripts\VisionCone.cs" Line="22" Column="3" />
       <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LevelCompleteScreen.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ClickNode.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CreateVisionCone.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NextLevelButton.cs" Line="23" Column="3" />
-      <File FileName="Assets\Scripts\Newspaper.cs" Line="16" Column="40" />
-      <File FileName="Assets\Scripts\Blackboard.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ShowCreditsButton.cs" Line="44" Column="4" />
-      <File FileName="Assets\Scripts\StartLevelButton.cs" Line="44" Column="76" />
+      <File FileName="Assets\Scripts\LevelCompleteScreen.cs" Line="77" Column="33" />
+      <File FileName="Assets\Scripts\NextLevelButton.cs" Line="63" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

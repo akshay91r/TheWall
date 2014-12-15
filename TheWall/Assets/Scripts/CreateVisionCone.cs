@@ -37,6 +37,9 @@ public class CreateVisionCone : MonoBehaviour {
 	private GameObject pivot;
 	private GameObject visionCone;
 	private Vector3 rotatePoint;
+
+	public Sprite AlertGuard;
+	private Sprite NormalGuard;
 	
 	// Use this for initialization
 	void Start () 
@@ -44,6 +47,9 @@ public class CreateVisionCone : MonoBehaviour {
 		//player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player>();
 		bb = GameObject.FindGameObjectWithTag ("Blackboard").GetComponent<Blackboard> ();
 		pivot = transform.Find ("Pivot").gameObject;
+
+		//starting sprite
+		NormalGuard = GetComponent<SpriteRenderer> ().sprite;
 		
 		//directionToPlayer = (player.transform.position - transform.position).normalized;
 		
@@ -209,6 +215,18 @@ public class CreateVisionCone : MonoBehaviour {
 		m.RecalculateNormals();
 		
 		return m;
+	}
+
+	public void ShowGuardAlert()
+	{
+		StartCoroutine (ShowAlertSprite ());
+	}
+
+	private IEnumerator ShowAlertSprite()
+	{
+		GetComponent<SpriteRenderer> ().sprite = AlertGuard;
+		yield return new WaitForSeconds (0.8f);
+		GetComponent<SpriteRenderer> ().sprite = NormalGuard;
 	}
 	
 	private void DrawConeArea()

@@ -941,7 +941,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &700817198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2465,7 +2465,7 @@ Transform:
   m_Children:
   - {fileID: 1264370106}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!114 &1676631949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2488,6 +2488,7 @@ MonoBehaviour:
   length: 3
   waitTime: .5
   initialDelay: .5
+  AlertGuard: {fileID: 21300000, guid: 37f4bd1b24edbd04bb23968cd3bf575d, type: 3}
 --- !u!212 &1676631950
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2567,7 +2568,7 @@ Transform:
   - {fileID: 756575679}
   - {fileID: 1087962135}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &1877238191
 GameObject:
   m_ObjectHideFlags: 0
@@ -2658,6 +2659,7 @@ MonoBehaviour:
   length: 2.79999995
   waitTime: .5
   initialDelay: .5
+  AlertGuard: {fileID: 0}
 --- !u!212 &1902500790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2693,7 +2695,7 @@ Transform:
   m_Children:
   - {fileID: 1746333977}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &1984867903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2757,7 +2759,7 @@ GameObject:
   - 212: {fileID: 2044866022}
   - 114: {fileID: 2044866021}
   m_Layer: 0
-  m_Name: soldierL
+  m_Name: soldierR
   m_TagString: Soldier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2785,6 +2787,7 @@ MonoBehaviour:
   length: 2.70000005
   waitTime: .25
   initialDelay: .5
+  AlertGuard: {fileID: 21300000, guid: 37f4bd1b24edbd04bb23968cd3bf575d, type: 3}
 --- !u!212 &2044866022
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2820,7 +2823,7 @@ Transform:
   m_Children:
   - {fileID: 1387125523}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 6
 --- !u!1 &2119567982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2890,7 +2893,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1390394803
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c32a26c2c50a81a43b1670493e78a71c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8643993584eb4214e89ac239a7d5f205, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2119567986
 Transform:
