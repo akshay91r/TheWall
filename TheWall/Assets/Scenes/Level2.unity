@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 1
+  zipLine: 0
   speed: 5
   timeToMoveIn: .5
   corpseTime: 1
@@ -393,6 +394,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: 43441f759339d05449e329878965bad7, type: 3}
   unlockSprite: {fileID: 21300000, guid: e7e03d1420360694e97b5a14acd65921, type: 3}
   unlocked: 0
+  zipLine: 0
 --- !u!212 &376074555
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -842,6 +844,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: d185392c54cdb7f448409f6582cef15d, type: 3}
   unlockSprite: {fileID: 21300000, guid: 2ffba7c19e20e10429ca07528ccaa1ff, type: 3}
   unlocked: 1
+  zipLine: 0
 --- !u!212 &713254609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -913,6 +916,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: 43441f759339d05449e329878965bad7, type: 3}
   unlockSprite: {fileID: 21300000, guid: e7e03d1420360694e97b5a14acd65921, type: 3}
   unlocked: 0
+  zipLine: 0
 --- !u!212 &756575678
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1109,6 +1113,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: d185392c54cdb7f448409f6582cef15d, type: 3}
   unlockSprite: {fileID: 21300000, guid: 2ffba7c19e20e10429ca07528ccaa1ff, type: 3}
   unlocked: 1
+  zipLine: 0
 --- !u!212 &846145172
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1329,6 +1334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 0
+  zipLine: 0
   speed: 5
   timeToMoveIn: .5
   corpseTime: 1
@@ -1523,6 +1529,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: 43441f759339d05449e329878965bad7, type: 3}
   unlockSprite: {fileID: 21300000, guid: e7e03d1420360694e97b5a14acd65921, type: 3}
   unlocked: 0
+  zipLine: 0
 --- !u!212 &1087962134
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1631,6 +1638,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: fa04a5f4efa7e794591a2d4db2130708, type: 3}
   unlockSprite: {fileID: 21300000, guid: 4ba365c6328b5a4449f8038f6a836be0, type: 3}
   unlocked: 0
+  zipLine: 0
 --- !u!212 &1094526169
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1702,6 +1710,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: 43441f759339d05449e329878965bad7, type: 3}
   unlockSprite: {fileID: 21300000, guid: e7e03d1420360694e97b5a14acd65921, type: 3}
   unlocked: 0
+  zipLine: 0
 --- !u!212 &1160066175
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1851,6 +1860,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: 43441f759339d05449e329878965bad7, type: 3}
   unlockSprite: {fileID: 21300000, guid: e7e03d1420360694e97b5a14acd65921, type: 3}
   unlocked: 0
+  zipLine: 0
 --- !u!212 &1269604650
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2103,6 +2113,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: 43441f759339d05449e329878965bad7, type: 3}
   unlockSprite: {fileID: 21300000, guid: e7e03d1420360694e97b5a14acd65921, type: 3}
   unlocked: 0
+  zipLine: 0
 --- !u!212 &1560500249
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2186,6 +2197,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: 43441f759339d05449e329878965bad7, type: 3}
   unlockSprite: {fileID: 21300000, guid: e7e03d1420360694e97b5a14acd65921, type: 3}
   unlocked: 0
+  zipLine: 0
 --- !u!212 &1560887070
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2269,6 +2281,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: fa04a5f4efa7e794591a2d4db2130708, type: 3}
   unlockSprite: {fileID: 21300000, guid: 4ba365c6328b5a4449f8038f6a836be0, type: 3}
   unlocked: 0
+  zipLine: 0
 --- !u!212 &1563383812
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2733,6 +2746,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: 43441f759339d05449e329878965bad7, type: 3}
   unlockSprite: {fileID: 21300000, guid: e7e03d1420360694e97b5a14acd65921, type: 3}
   unlocked: 0
+  zipLine: 0
 --- !u!212 &2022833368
 SpriteRenderer:
   m_ObjectHideFlags: 0

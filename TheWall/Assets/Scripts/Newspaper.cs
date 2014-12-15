@@ -10,11 +10,28 @@ public class Newspaper : MonoBehaviour {
 
 	public void LoadRandomPage(int pLevel)
 	{
-		//UNCOMMENT WHEN OTHER WALL ENTRIES ARE ADDED
-		//if(pLevel == 0)//wall1
+		if(pLevel == 1)
+		{
+			int randomPage = Random.Range(0,15);
+			GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(string.Concat(wall1Path,"clipping"+randomPage), typeof(Sprite));
+		}
+
+		else if(pLevel == 2)
 		{
 			int randomPage = Random.Range(0,13);
-			GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(string.Concat(wall1Path,"clipping"+randomPage), typeof(Sprite));
+			GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(string.Concat(wall2Path,"clipping"+randomPage), typeof(Sprite));
+		}
+
+		else if(pLevel == 3)
+		{
+			int randomPage = Random.Range(0,12);
+			GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(string.Concat(wall3Path,"clipping"+randomPage), typeof(Sprite));
+		}
+
+		else if(pLevel == 4)
+		{
+			int randomPage = Random.Range(0,10);
+			GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(string.Concat(wall4Path,"clipping"+randomPage), typeof(Sprite));
 		}
 	}
 }
