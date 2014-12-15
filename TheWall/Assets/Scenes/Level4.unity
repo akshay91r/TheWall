@@ -313,6 +313,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: 8643993584eb4214e89ac239a7d5f205, type: 3}
   unlockSprite: {fileID: 21300000, guid: c32a26c2c50a81a43b1670493e78a71c, type: 3}
   unlocked: 0
+  zipLine: 0
 --- !u!212 &319960581
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -379,6 +380,10 @@ Prefab:
       propertyPath: path
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: db09305d715e70f4c97bfc312eae6225, type: 2}
+      propertyPath: NodeToZiplineTo
+      value: 
+      objectReference: {fileID: 1160066172}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db09305d715e70f4c97bfc312eae6225, type: 2}
   m_RootGameObject: {fileID: 725824356}
@@ -431,6 +436,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: d185392c54cdb7f448409f6582cef15d, type: 3}
   unlockSprite: {fileID: 21300000, guid: 2ffba7c19e20e10429ca07528ccaa1ff, type: 3}
   unlocked: 1
+  zipLine: 0
 --- !u!212 &376074555
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -740,6 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 2
+  zipLine: 0
   speed: 5
   timeToMoveIn: .5
   corpseTime: 1
@@ -1086,6 +1093,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: d185392c54cdb7f448409f6582cef15d, type: 3}
   unlockSprite: {fileID: 21300000, guid: 2ffba7c19e20e10429ca07528ccaa1ff, type: 3}
   unlocked: 1
+  zipLine: 0
 --- !u!212 &713254609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1121,6 +1129,8 @@ GameObject:
   - 114: {fileID: 725824359}
   - 65: {fileID: 725824358}
   - 54: {fileID: 725824357}
+  - 114: {fileID: 725824363}
+  - 114: {fileID: 725824362}
   m_Layer: 8
   m_Name: Zipline
   m_TagString: Player
@@ -1170,7 +1180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 1
-  speed: 9
+  zipLine: 1
+  speed: 11
   timeToMoveIn: .5
   corpseTime: 1
   alive: 1
@@ -1211,6 +1222,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
+--- !u!114 &725824362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: db09305d715e70f4c97bfc312eae6225,
+    type: 2}
+  m_PrefabInternal: {fileID: 353606491}
+  m_GameObject: {fileID: 725824356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f897ab80c14b9f4c981fa375d094379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SplineRootPrefab: {fileID: 100006, guid: 7a54e210c4ca03b4eb1c024ba21288bc, type: 2}
+  Duration: 10
+  OrientationMode: 0
+  WrapMode: 0
+  AutoStart: 0
+  AutoClose: 0
+  HideOnExecute: 1
+  NodeToZiplineTo: {fileID: 1160066172}
+--- !u!114 &725824363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: db09305d715e70f4c97bfc312eae6225,
+    type: 2}
+  m_PrefabInternal: {fileID: 353606491}
+  m_GameObject: {fileID: 725824356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633615fde68f050408ad3af952c3e249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &732577365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,6 +1315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 0
+  zipLine: 0
   speed: 5
   timeToMoveIn: .5
   corpseTime: 1
@@ -1417,6 +1461,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: 43441f759339d05449e329878965bad7, type: 3}
   unlockSprite: {fileID: 21300000, guid: e7e03d1420360694e97b5a14acd65921, type: 3}
   unlocked: 0
+  zipLine: 0
 --- !u!212 &756575678
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1761,6 +1806,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: 724a1e6e5a5a832469f86dbbac9bdda6, type: 3}
   unlockSprite: {fileID: 21300000, guid: 91dec30a8060f9f42a75e94865aa601a, type: 3}
   unlocked: 0
+  zipLine: 0
 --- !u!212 &943395696
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1937,6 +1983,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: fa04a5f4efa7e794591a2d4db2130708, type: 3}
   unlockSprite: {fileID: 21300000, guid: 4ba365c6328b5a4449f8038f6a836be0, type: 3}
   unlocked: 0
+  zipLine: 0
 --- !u!212 &1087962134
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2033,6 +2080,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: fa04a5f4efa7e794591a2d4db2130708, type: 3}
   unlockSprite: {fileID: 21300000, guid: 4ba365c6328b5a4449f8038f6a836be0, type: 3}
   unlocked: 0
+  zipLine: 1
 --- !u!212 &1160066175
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2128,6 +2176,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: c14682a16cb59a04f9c0410363f49da3, type: 3}
   unlockSprite: {fileID: 21300000, guid: e627bf1abca00bf45a02ffffbc4e62d5, type: 3}
   unlocked: 1
+  zipLine: 0
 --- !u!212 &1190153562
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2872,6 +2921,7 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: 8643993584eb4214e89ac239a7d5f205, type: 3}
   unlockSprite: {fileID: 21300000, guid: c32a26c2c50a81a43b1670493e78a71c, type: 3}
   unlocked: 0
+  zipLine: 0
 --- !u!212 &2119567985
 SpriteRenderer:
   m_ObjectHideFlags: 0

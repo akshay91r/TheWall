@@ -60,6 +60,9 @@
      <Compile Include="Assets\Scripts\ProgressBar.cs" />
      <Compile Include="Assets\Scripts\ShowCreditsButton.cs" />
      <Compile Include="Assets\Scripts\SightMotion.cs" />
+     <Compile Include="Assets\Scripts\SplineController\MathUtils.cs" />
+     <Compile Include="Assets\Scripts\SplineController\SplineController.cs" />
+     <Compile Include="Assets\Scripts\SplineController\SplineInterpolator.cs" />
      <Compile Include="Assets\Scripts\StartGameButton.cs" />
      <Compile Include="Assets\Scripts\StartLevelButton.cs" />
      <Compile Include="Assets\Scripts\TestMeshCreation.cs" />

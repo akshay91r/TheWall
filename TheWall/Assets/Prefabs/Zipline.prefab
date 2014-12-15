@@ -12,6 +12,8 @@ GameObject:
   - 114: {fileID: 11427600}
   - 65: {fileID: 6527600}
   - 54: {fileID: 5427600}
+  - 114: {fileID: 11400002}
+  - 114: {fileID: 11400000}
   m_Layer: 8
   m_Name: Zipline
   m_TagString: Player
@@ -58,6 +60,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.46056712, y: 1.70604014, z: 1}
   m_Center: {x: .0152637633, y: -.0183090623, z: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f897ab80c14b9f4c981fa375d094379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SplineRootPrefab: {fileID: 100006, guid: 7a54e210c4ca03b4eb1c024ba21288bc, type: 2}
+  Duration: 10
+  OrientationMode: 0
+  WrapMode: 0
+  AutoStart: 0
+  AutoClose: 0
+  HideOnExecute: 1
+  NodeToZiplineTo: {fileID: 0}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633615fde68f050408ad3af952c3e249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11427600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,7 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 2
-  speed: 9
+  zipLine: 1
+  speed: 11
   timeToMoveIn: .5
   corpseTime: 1
   alive: 1

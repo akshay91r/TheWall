@@ -4,6 +4,8 @@ using System.Collections;
 public class Player : MonoBehaviour {
 	
 	public int path = 0; //default
+
+	public bool zipLine = false;
 	
 	public float speed = 7.5f;
 	public float timeToMoveIn = 0.5f;
@@ -40,6 +42,18 @@ public class Player : MonoBehaviour {
 		
 		moving = true;
 		StartCoroutine(Move (pos));
+	}
+
+	public void ZiplineToPosition(int pPath, Vector3 pos)
+	{
+		//if already moving, or got called from a node on a different path
+		if(moving || (pPath != path))
+		{
+			return;
+		}
+		
+		moving = true;
+		GetComponent<SplineController> ().FollowSpline ();
 	}
 	
 	private IEnumerator Move(Vector3 pos){
@@ -85,6 +99,9 @@ public class Player : MonoBehaviour {
 		
 		moving = false;
 		yield return new WaitForSeconds(0f);
+
+		if(zipLine)
+			GetComponent<SplineController>().CalculateDuration();
 	}
 	
 	public void Die()
@@ -96,7 +113,11 @@ public class Player : MonoBehaviour {
 			StopAllCoroutines ();
 			bb.SpawnPlayerAtPath (path);
 			StartCoroutine (RemoveAfterTime ());
-			//bb.GameOver ();
+
+			if(zipLine)
+			{
+				GetComponent<SplineInterpolator>().enabled = false;	
+			}
 		}
 	}
 	
@@ -110,10 +131,11 @@ public class Player : MonoBehaviour {
 		moving = true;
 		Vector3 OutScreenPos = transform.position;
 		OutScreenPos.x -= 10;
+		GetComponent<Collider> ().enabled = false; //so that player doesnt get hit on way out
 		
 		float moveOutSpeed = Vector3.Distance (transform.position, OutScreenPos) / timeToMoveIn;
 		
-		while(Vector3.Distance(transform.position, OutScreenPos) > 0.05f)
+		while(Vector3.Distance(transform.position, OutScreenPos) > 0.15f)
 		{
 			transform.position = Vector3.MoveTowards(transform.position, OutScreenPos, moveOutSpeed * Time.deltaTime);
 			

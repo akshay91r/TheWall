@@ -11,6 +11,7 @@ public class ClickNode : MonoBehaviour {
 	public Sprite lockSprite;
 	public Sprite unlockSprite;
 	public bool unlocked = false;
+	public bool zipLine = false;
 	
 	private Blackboard bb;
 	
@@ -50,8 +51,16 @@ public class ClickNode : MonoBehaviour {
 		
 		if(unlocked)
 		{
-			foreach(GameObject g in players)
-				g.GetComponent<Player>().MoveToPosition (pathNo, transform.position);
+			if(!zipLine)
+			{
+				foreach(GameObject g in players)
+					g.GetComponent<Player>().MoveToPosition (pathNo, transform.position);
+			}
+			else
+			{//swing on zipline
+				foreach(GameObject g in players)
+					g.GetComponent<Player>().ZiplineToPosition (pathNo, transform.position);
+			}
 		}
 	}
 	
