@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11434402}
   - 65: {fileID: 6534402}
   - 54: {fileID: 5434402}
+  - 114: {fileID: 11400000}
   m_Layer: 8
   m_Name: PlayerPiece
   m_TagString: Player
@@ -26,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5, y: -1.95000005, z: 0}
-  m_LocalScale: {x: .984151304, y: .984151542, z: 4.92075777}
+  m_LocalPosition: {x: 4.3499999, y: -1.91999996, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 2.39690375}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,8 +57,19 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.81990087, y: 2.92489052, z: 1}
-  m_Center: {x: -.0165343285, y: .0495946407, z: 0}
+  m_Size: {x: 1.81990087, y: 2.16602516, z: 1}
+  m_Center: {x: -.0165343285, y: .429027438, z: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633615fde68f050408ad3af952c3e249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11434402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,12 +82,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 0
-  speed: 5
+  swimming: 0
+  zipLine: 0
+  speed: 6
   timeToMoveIn: .5
-  corpseTime: 1
+  corpseTime: .75
   alive: 1
   human: {fileID: 21300000, guid: 0c177adf4075d0f4d93c5f65dda754e1, type: 3}
-  redHuman: {fileID: 21300000, guid: 51bd0e8c8b14072468cfbc708f4ea9ad, type: 3}
+  redHuman: {fileID: 21300000, guid: cf80e8082fba2db4992a2e9215d80e54, type: 3}
 --- !u!212 &21234402
 SpriteRenderer:
   m_ObjectHideFlags: 1

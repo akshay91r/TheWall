@@ -33,8 +33,18 @@ public class Blackboard : MonoBehaviour {
 	private int pathsDone = 0;
 	
 	private bool gameOver = false;
+	public GameObject smPrefab;
 	
 	// Use this for initialization
+
+	void Awake()
+	{
+		if(!GameObject.FindGameObjectWithTag("SoundManager"))
+		{
+			GameObject newSoundManager = GameObject.Instantiate (smPrefab, smPrefab.transform.position, smPrefab.transform.rotation) as GameObject;
+		}
+	}
+
 	void Start () {
 		
 		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();

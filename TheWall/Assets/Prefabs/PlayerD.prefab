@@ -70,12 +70,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 0
+  swimming: 0
+  zipLine: 0
   speed: 5
   timeToMoveIn: .5
   corpseTime: 1
   alive: 1
   human: {fileID: 21300000, guid: 0c177adf4075d0f4d93c5f65dda754e1, type: 3}
-  redHuman: {fileID: 21300000, guid: 51bd0e8c8b14072468cfbc708f4ea9ad, type: 3}
+  redHuman: {fileID: 21300000, guid: cf80e8082fba2db4992a2e9215d80e54, type: 3}
 --- !u!212 &21286128
 SpriteRenderer:
   m_ObjectHideFlags: 1

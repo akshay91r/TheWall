@@ -5,6 +5,7 @@ public class Player : MonoBehaviour {
 	
 	public int path = 0; //default
 
+	public bool swimming = false;
 	public bool zipLine = false;
 	
 	public float speed = 7.5f;
@@ -22,6 +23,7 @@ public class Player : MonoBehaviour {
 	public Sprite redHuman;
 	
 	private Blackboard bb;
+	private SoundManager sm;
 	
 	// Use this for initialization
 	void Start () {
@@ -30,6 +32,7 @@ public class Player : MonoBehaviour {
 		playerSprite = redHuman;
 		playerScale = transform.localScale.x;
 		bb = GameObject.FindGameObjectWithTag ("Blackboard").GetComponent<Blackboard> ();
+		sm = GameObject.FindGameObjectWithTag ("SoundManager").GetComponent<SoundManager> ();
 	}
 	
 	public void MoveToPosition(int pPath, Vector3 pos)
@@ -111,6 +114,12 @@ public class Player : MonoBehaviour {
 			alive = false;
 			GetComponent<SpriteRenderer> ().sprite = redHuman;
 			StopAllCoroutines ();
+
+			if(swimming)
+				sm.PlayFoleySound(1);
+			else
+				sm.PlayDefectorDyingSound();
+
 			bb.SpawnPlayerAtPath (path);
 			StartCoroutine (RemoveAfterTime ());
 
@@ -128,6 +137,8 @@ public class Player : MonoBehaviour {
 	
 	public IEnumerator GetOutOfScreen()
 	{
+		sm.PlayFoleySound (7);
+
 		moving = true;
 		Vector3 OutScreenPos = transform.position;
 		OutScreenPos.x -= 10;

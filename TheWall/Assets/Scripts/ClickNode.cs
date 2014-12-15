@@ -14,15 +14,16 @@ public class ClickNode : MonoBehaviour {
 	public bool zipLine = false;
 	
 	private Blackboard bb;
+	private SoundManager sm;
 	
 	// Use this for initialization
 	void Start () {
 		
 		players = GameObject.FindGameObjectsWithTag ("Player");
 		bb = GameObject.FindGameObjectWithTag ("Blackboard").GetComponent<Blackboard> ();
-		
+		sm = GameObject.FindGameObjectWithTag ("SoundManager").GetComponent<SoundManager> ();
 	}
-	
+
 	public void UnlockNode()
 	{
 		if(!unlocked)
@@ -51,6 +52,7 @@ public class ClickNode : MonoBehaviour {
 		
 		if(unlocked)
 		{
+			sm.PlayFoleySound(0);
 			if(!zipLine)
 			{
 				foreach(GameObject g in players)

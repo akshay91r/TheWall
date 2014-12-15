@@ -746,6 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 2
+  swimming: 0
   zipLine: 0
   speed: 5
   timeToMoveIn: .5
@@ -1180,6 +1181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 1
+  swimming: 0
   zipLine: 1
   speed: 11
   timeToMoveIn: .5
@@ -1315,13 +1317,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 0
+  swimming: 0
   zipLine: 0
   speed: 5
   timeToMoveIn: .5
   corpseTime: 1
   alive: 1
   human: {fileID: 21300000, guid: 0c177adf4075d0f4d93c5f65dda754e1, type: 3}
-  redHuman: {fileID: 21300000, guid: 51bd0e8c8b14072468cfbc708f4ea9ad, type: 3}
+  redHuman: {fileID: 21300000, guid: cf80e8082fba2db4992a2e9215d80e54, type: 3}
 --- !u!212 &732577369
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1567,7 +1570,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11498044, guid: af9a44301ed565c40821c258e8eaeab1, type: 2}
       propertyPath: durationSeconds
-      value: 60
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af9a44301ed565c40821c258e8eaeab1, type: 2}
@@ -1674,6 +1677,7 @@ MonoBehaviour:
   playerObjPath0: {fileID: 186128, guid: cdcb23b587adfaf4fb89bb2ab48e5123, type: 2}
   playerObjPath1: {fileID: 127600, guid: db09305d715e70f4c97bfc312eae6225, type: 2}
   playerObjPath2: {fileID: 130174, guid: 8d67c6e20fb92b44eb6602e276089d7b, type: 2}
+  smPrefab: {fileID: 100000, guid: c9ee507c82f8a554cbdd1c4c840c90d6, type: 2}
 --- !u!4 &871835588
 Transform:
   m_ObjectHideFlags: 0
@@ -1863,7 +1867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c2097a533be6324489d0572cbbe1935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durationSeconds: 60
+  durationSeconds: 45
 --- !u!132 &951613098
 GUIText:
   m_ObjectHideFlags: 0
@@ -2018,7 +2022,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1087962132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.88999987, y: -3.6400001, z: 0}
+  m_LocalPosition: {x: -6.32999992, y: -3.6400001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1820022372}
@@ -2231,6 +2235,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1676631948}
   m_RootOrder: 0
+--- !u!1 &1298791054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1298791056}
+  - 212: {fileID: 1298791055}
+  m_Layer: 0
+  m_Name: Tunnel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1298791055
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1298791054}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b89056c646e315f49b9e183f556563ed, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &1298791056
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1298791054}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.95000005, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
 --- !u!1 &1371222265
 GameObject:
   m_ObjectHideFlags: 0
@@ -2543,6 +2597,7 @@ MonoBehaviour:
   initialDelay: .5
   AlertGuard: {fileID: 21300000, guid: 37f4bd1b24edbd04bb23968cd3bf575d, type: 3}
   StandingGuard: 1
+  IsDog: 0
 --- !u!212 &1676631950
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2715,6 +2770,7 @@ MonoBehaviour:
   initialDelay: .5
   AlertGuard: {fileID: 21300000, guid: 418609d3e68b00b4192f1fce49c42b4a, type: 3}
   StandingGuard: 0
+  IsDog: 0
 --- !u!212 &1902500790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2844,6 +2900,7 @@ MonoBehaviour:
   initialDelay: .5
   AlertGuard: {fileID: 21300000, guid: 37f4bd1b24edbd04bb23968cd3bf575d, type: 3}
   StandingGuard: 1
+  IsDog: 0
 --- !u!212 &2044866022
 SpriteRenderer:
   m_ObjectHideFlags: 0

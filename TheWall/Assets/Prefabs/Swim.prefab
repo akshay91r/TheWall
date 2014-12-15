@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.22000027, y: -4.61000013, z: 0}
+  m_LocalPosition: {x: 8.22000027, y: -4.51000023, z: 0}
   m_LocalScale: {x: .707750559, y: .597526908, z: 2.32049346}
   m_Children: []
   m_Father: {fileID: 0}
@@ -70,6 +70,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 0
+  swimming: 1
+  zipLine: 0
   speed: 5
   timeToMoveIn: .5
   corpseTime: 1

@@ -40,6 +40,7 @@ public class CreateVisionCone : MonoBehaviour {
 
 	public Sprite AlertGuard;
 	public bool StandingGuard = false;
+	public bool IsDog = false;
 	private Sprite NormalGuard;
 	
 	// Use this for initialization

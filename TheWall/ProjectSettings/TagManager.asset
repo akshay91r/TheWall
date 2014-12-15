@@ -16,6 +16,7 @@ TagManager:
   - BG
   - SplineRoot
   - CreditsRestartGame
+  - SoundManager
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
