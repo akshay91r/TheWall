@@ -12,6 +12,9 @@ public class WallFallScreen : MonoBehaviour {
 		
 		GameObject bg = GameObject.FindGameObjectWithTag ("BG");
 		outPos = new Vector3 (bg.GetComponent<SpriteRenderer>().bounds.size.x, 0, 0);
+
+		GameObject.FindGameObjectWithTag ("CreditsRestartGame").renderer.enabled = false;
+		GameObject.FindGameObjectWithTag ("CreditsRestartGame").GetComponent<CircleCollider2D>().enabled = false;
 	}
 	
 	public void MoveOut()
@@ -34,5 +37,8 @@ public class WallFallScreen : MonoBehaviour {
 		
 		//moving = false;
 		yield return new WaitForSeconds(0f);
+
+		GameObject.FindGameObjectWithTag ("CreditsRestartGame").renderer.enabled = true;
+		GameObject.FindGameObjectWithTag ("CreditsRestartGame").GetComponent<CircleCollider2D>().enabled = true;
 	}
 }

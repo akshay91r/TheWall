@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Blackboard.cs" />
      <Compile Include="Assets\Scripts\ClickNode.cs" />
      <Compile Include="Assets\Scripts\CreateVisionCone.cs" />
+     <Compile Include="Assets\Scripts\CreditsRestartGame.cs" />
      <Compile Include="Assets\Scripts\LevelCompleteScreen.cs" />
      <Compile Include="Assets\Scripts\LevelStartScreen.cs" />
      <Compile Include="Assets\Scripts\Newspaper.cs" />

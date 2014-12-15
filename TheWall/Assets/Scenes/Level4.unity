@@ -2538,6 +2538,7 @@ MonoBehaviour:
   waitTime: .5
   initialDelay: .5
   AlertGuard: {fileID: 21300000, guid: 37f4bd1b24edbd04bb23968cd3bf575d, type: 3}
+  StandingGuard: 1
 --- !u!212 &1676631950
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2709,6 +2710,7 @@ MonoBehaviour:
   waitTime: .5
   initialDelay: .5
   AlertGuard: {fileID: 0}
+  StandingGuard: 0
 --- !u!212 &1902500790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2837,6 +2839,7 @@ MonoBehaviour:
   waitTime: .25
   initialDelay: .5
   AlertGuard: {fileID: 21300000, guid: 37f4bd1b24edbd04bb23968cd3bf575d, type: 3}
+  StandingGuard: 1
 --- !u!212 &2044866022
 SpriteRenderer:
   m_ObjectHideFlags: 0

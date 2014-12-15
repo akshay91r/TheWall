@@ -222,7 +222,7 @@ Transform:
   m_LocalScale: {x: .541885257, y: .541885495, z: .541885495}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!1001 &113200888
 Prefab:
   m_ObjectHideFlags: 0
@@ -983,7 +983,7 @@ Transform:
   - {fileID: 1560500246}
   - {fileID: 1094526166}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &779948593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,7 +1181,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!1 &871835586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2001,7 +2001,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!1 &1499615082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,6 +2438,7 @@ MonoBehaviour:
   waitTime: .25
   initialDelay: .5
   AlertGuard: {fileID: 21300000, guid: 16ab94372d050a84093063c69f460c4d, type: 3}
+  StandingGuard: 0
 --- !u!212 &1676631950
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2606,6 +2607,7 @@ MonoBehaviour:
   waitTime: .125
   initialDelay: .5
   AlertGuard: {fileID: 21300000, guid: 37f4bd1b24edbd04bb23968cd3bf575d, type: 3}
+  StandingGuard: 1
 --- !u!212 &1902500790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2810,6 +2812,7 @@ MonoBehaviour:
   waitTime: .300000012
   initialDelay: .5
   AlertGuard: {fileID: 21300000, guid: 37f4bd1b24edbd04bb23968cd3bf575d, type: 3}
+  StandingGuard: 1
 --- !u!212 &2044866022
 SpriteRenderer:
   m_ObjectHideFlags: 0

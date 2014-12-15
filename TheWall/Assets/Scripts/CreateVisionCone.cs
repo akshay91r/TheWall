@@ -39,6 +39,7 @@ public class CreateVisionCone : MonoBehaviour {
 	private Vector3 rotatePoint;
 
 	public Sprite AlertGuard;
+	public bool StandingGuard = false;
 	private Sprite NormalGuard;
 	
 	// Use this for initialization
@@ -136,10 +137,8 @@ public class CreateVisionCone : MonoBehaviour {
 			drawRayBot = Quaternion.Euler (0, 0, angleShift - coneSize) * Vector3.right;
 			
 			
-			//this works
+			//this works - UNCOMMENT
 			pivot.transform.rotation = Quaternion.Euler(0,0,angleShift);
-			
-			//pivot.transform.RotateAround(rotatePoint, Vector3.forward * direction, 30 * Time.deltaTime);
 			
 			
 			yield return null;
@@ -256,22 +255,35 @@ public class CreateVisionCone : MonoBehaviour {
 		
 		visionCone = plane;
 		//visionCone.transform.parent = transform;
+
+		if(!StandingGuard)
+			pivot.transform.position = transform.position;
+		else //standing guard - so vision cone comes out of his face
+		{
+			pivot.transform.position = transform.position;
+			float offset = (visionCone.GetComponent<MeshRenderer> ().bounds.size.y)/2 * transform.localScale.y * 0.85f;
+			pivot.transform.position += new Vector3(0, offset, 0);
+		}
 		
-		pivot.transform.position = transform.position;
+
 		//pivot.transform.position += new Vector3 (0, pivotOffset, 0);
-		
+
 		visionCone.transform.position = transform.position;
-		visionCone.transform.position += new Vector3 ((visionCone.GetComponent<MeshRenderer> ().bounds.size.x)/2, 0, -0.5f);
+
+		if(!StandingGuard)
+			visionCone.transform.position += new Vector3 ((visionCone.GetComponent<MeshRenderer> ().bounds.size.x)/2, 0, -0.5f);
+		else
+			visionCone.transform.position += new Vector3 ((visionCone.GetComponent<MeshRenderer> ().bounds.size.x)/2, (visionCone.GetComponent<MeshRenderer> ().bounds.size.y)/2 *  transform.localScale.y * 0.85f, -0.5f);
+
+
 		visionCone.AddComponent(typeof(MeshCollider));
 		visionCone.GetComponent<MeshCollider>().isTrigger = true;
 		visionCone.AddComponent(typeof(VisionCone));
 		
 		
 		visionCone.transform.parent = pivot.transform;
-		
+
 		pivot.transform.rotation = Quaternion.Euler (0, 0, angleShift);
-		
-		//visionCone.transform.RotateAround(rotatePoint, Vector3.forward * direction, 30 * Time.deltaTime);
 		
 		rotatePoint = transform.position;
 	}	
