@@ -238,19 +238,4 @@ public class Blackboard : MonoBehaviour {
 		yield return new WaitForSeconds (delay);
 		//stateText.text = "";
 	}
-	
-	//	private void WinGame()
-	//	{
-	//		foreach(GameObject g in soldiers)
-	//			g.GetComponent<CreateVisionCone>().StopAllCoroutines();
-	//		
-	//		stateText.text = "You Win!";
-	//		scoreText.text = "Score: " + playersAcross;
-	//		retry.Activate();
-	//	}
-	
-	public void RestartLevel()
-	{
-		Application.LoadLevel (0);
-	}
 }

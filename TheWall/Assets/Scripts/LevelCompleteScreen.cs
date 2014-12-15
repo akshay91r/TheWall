@@ -53,7 +53,7 @@ public class LevelCompleteScreen : MonoBehaviour {
 		//level passed
 		if(achievement >= 1)
 		{
-			stateText.GetComponent<GUIText>().text = "Wall "+(currentLevel+1)+" Complete!";
+			stateText.GetComponent<GUIText>().text = "Wall "+(currentLevel)+" Complete!";
 			transform.Find ("NextLevelButton").gameObject.active = true;
 		}
 		//level failed
