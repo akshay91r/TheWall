@@ -1885,6 +1885,7 @@ MonoBehaviour:
   waitTime: 0
   initialDelay: 0
   AlertGuard: {fileID: 21300000, guid: 16ab94372d050a84093063c69f460c4d, type: 3}
+  StandingGuard: 0
 --- !u!212 &2044866022
 SpriteRenderer:
   m_ObjectHideFlags: 0
