@@ -1,18 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Timer.cs">
     <Files>
-      <File FileName="Assets\Scripts\SoundManager.cs" Line="16" Column="172" />
-      <File FileName="Assets\Scripts\NextLevelButton.cs" Line="68" Column="3" />
-      <File FileName="Assets\Scripts\SplineController\SplineInterpolator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Blackboard.cs" Line="58" Column="3" />
-      <File FileName="Assets\Scripts\Timer.cs" Line="36" Column="4" />
+      <File FileName="Assets\Scripts\Timer.cs" Line="21" Column="1" />
       <File FileName="Assets\Scripts\CreditsRestartGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WallFallScreen.cs" Line="42" Column="107" />
-      <File FileName="Assets\Scripts\ClickNode.cs" Line="6" Column="31" />
-      <File FileName="Assets\Scripts\Player.cs" Line="140" Column="25" />
-      <File FileName="Assets\Scripts\CreateVisionCone.cs" Line="43" Column="28" />
-      <File FileName="Assets\Scripts\VisionCone.cs" Line="32" Column="1" />
+      <File FileName="Assets\Scripts\WallFallScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CreateVisionCone.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\VisionCone.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NextLevelButton.cs" Line="28" Column="66" />
+      <File FileName="Assets\Scripts\StartGameButton.cs" Line="29" Column="2" />
+      <File FileName="Assets\Scripts\ProgressBar.cs" Line="77" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

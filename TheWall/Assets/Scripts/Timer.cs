@@ -14,11 +14,15 @@ public class Timer : MonoBehaviour {
 	private int seconds;
 	
 	private Blackboard bb;
+	private Camera cam;
 	
 	// Use this for initialization
 	void Start () {
-		
+
+		cam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera> ();
+
 		bb = GameObject.FindGameObjectWithTag ("Blackboard").GetComponent<Blackboard> ();
+		cam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera> ();
 		timeRemaining = durationSeconds;
 	}
 	

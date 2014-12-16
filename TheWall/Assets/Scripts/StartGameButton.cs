@@ -9,6 +9,23 @@ public class StartGameButton : MonoBehaviour {
 	public Sprite InactiveSprite;
 	public Sprite HoverSprite;
 	public Sprite ClickSprite;
+
+	void Start()
+	{
+		CheckForMultipleSoundManagers ();
+	}
+
+	void CheckForMultipleSoundManagers ()
+	{
+		GameObject[] sms = GameObject.FindGameObjectsWithTag ("SoundManager");
+
+		if(sms.Length > 1)
+		{
+			//destroy extra one
+			GameObject delete = GameObject.FindGameObjectWithTag ("SoundManager");
+			Destroy(delete);
+		}
+	}
 	
 	void OnMouseDown()
 	{

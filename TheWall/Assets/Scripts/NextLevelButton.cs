@@ -21,10 +21,11 @@ public class NextLevelButton : MonoBehaviour {
 	{
 		int count = 0;
 
-		foreach (UnityEditor.EditorBuildSettingsScene S in UnityEditor.EditorBuildSettings.scenes)
-		{
-			numberOfLevels++;
-		}
+//		foreach (UnityEditor.EditorBuildSettingsScene S in UnityEditor.EditorBuildSettings.scenes)
+//		{
+//			numberOfLevels++;
+//		}
+		numberOfLevels = 6; //simce above code causing problems for web
 		print ("levels = " + numberOfLevels);
 	}
 	

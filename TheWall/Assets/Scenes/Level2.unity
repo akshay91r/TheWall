@@ -1421,6 +1421,10 @@ Prefab:
       propertyPath: durationSeconds
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 13298044, guid: af9a44301ed565c40821c258e8eaeab1, type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af9a44301ed565c40821c258e8eaeab1, type: 2}
   m_RootGameObject: {fileID: 1439977759}
@@ -1979,8 +1983,8 @@ GUIText:
   m_Enabled: 1
   serializedVersion: 3
   m_Text: 
-  m_Anchor: 4
-  m_Alignment: 1
+  m_Anchor: 3
+  m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
@@ -2643,7 +2647,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1902500788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.02999997, y: -2.57999992, z: 0}
+  m_LocalPosition: {x: 3.02999997, y: -2.92000008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1746333977}
@@ -2849,7 +2853,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2044866020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.04999995, y: -1.88999999, z: 0}
+  m_LocalPosition: {x: -3.36999989, y: -2.38000011, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1387125523}

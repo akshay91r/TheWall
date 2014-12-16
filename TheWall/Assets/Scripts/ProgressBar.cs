@@ -83,6 +83,8 @@ public class ProgressBar : MonoBehaviour {
 			GUI.Box(new Rect(size.x*0.75f,size.y/4, size.x/2, size.y/2), goldTrophy, GUI.skin.label);
 			
 			//draw the filled-in part:
+			Rect barSize = new Rect(0, 0, size.x, size.y);
+			
 			GUI.BeginGroup(new Rect(0,0, size.x * barDisplay, size.y));
 			
 			if(achievement == 0)
